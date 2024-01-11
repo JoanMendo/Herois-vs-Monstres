@@ -1,8 +1,9 @@
-﻿namespace Constants
+﻿namespace ConstantsUsed
 {
-    public class Class1
+    public class Text
     {
         /* Definició de constants i variables*/
+        public static readonly string[] StartingMessages = { StartingMsg, StartLeave, HowToPlay, HowToLeave };
         public const string StartingMsg = "Benvingut a Herois vs Monstres!";
         public const string StartLeave = "Que vols fer ?";
         public const string HowToPlay = "1. Jugar a aquesta obra maestra del gaming";
@@ -70,34 +71,37 @@
 
         public const string BlankLine = " ";
 
-        public const decimal Zero = 0;
-        public const decimal One = 1;
-        public const decimal Two = 2;
-        public const decimal Three = 3;
-        public const decimal Five = 5;
-        public const decimal Twenty = 20;
-        public const decimal Thirty = 30;
-        public const decimal Seventy = 70;
-        public const decimal OneHundred = 100;
-        public const decimal OneHundredAndTwenty = 120;
-        public const decimal FiveHundred = 500;
-        public const decimal OneThousandFiveHundred = 1500;
-        public const decimal TwoThousand = 2000;
-        public const decimal TwoThousandAndFiveHundred = 2500;
-        public const decimal OneHundredAndEighty = 180;
-        public const decimal ThreeHundred = 300;
-        public const decimal TwentyFive = 25;
-        public const decimal Forty = 40;
-        public const decimal ThreeThousand = 3000;
-        public const decimal ThreeThousandSevenHundredSeventyFive = 3750;
-        public const decimal OneHundredAndFifty = 150;
-        public const decimal TwoHundredAndFifty = 250;
-        public const decimal FourHundred = 400;
-        public const decimal ThirtyFive = 35;
-        public const decimal FortyFive = 45;
-        public const decimal OneThousand = 1000;
-        public const decimal ThreeHundredAndFifty = 350;
-        public const decimal NineThousand = 9000;
-        public const decimal TwelveThousand = 12000;
     }
+    public class Nums 
+    {
+        public const int Zero = 0;
+        public const int One = 1;
+        public const int Two = 2;
+        public const int Three = 3;
+        public const int Five = 5;
+        public const int Twenty = 20;
+        public const int Thirty = 30;
+        public const int Seventy = 70;
+        public const int OneHundred = 100;
+        public const int OneHundredAndTwenty = 120;
+        public const int FiveHundred = 500;
+        public const int OneThousandFiveHundred = 1500;
+        public const int TwoThousand = 2000;
+        public const int TwoThousandAndFiveHundred = 2500;
+        public const int OneHundredAndEighty = 180;
+        public const int ThreeHundred = 300;
+        public const int TwentyFive = 25;
+        public const int Forty = 40;
+        public const int ThreeThousand = 3000;
+        public const int ThreeThousandSevenHundredSeventyFive = 3750;
+        public const int OneHundredAndFifty = 150;
+        public const int TwoHundredAndFifty = 250;
+        public const int FourHundred = 400;
+        public const int ThirtyFive = 35;
+        public const int FortyFive = 45;
+        public const int OneThousand = 1000;
+        public const int ThreeHundredAndFifty = 350;
+        public const int NineThousand = 9000;
+        public const int TwelveThousand = 12000;
+    } 
 }
