@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading;
+using Constants;
+using Metodos;
 
 namespace PR1
 {
@@ -7,125 +9,29 @@ namespace PR1
     {
         public static void Main()
         {
-            /* Definició de constants i variables*/
-            const string StartingMsg = "Benvingut a Herois vs Monstres!";
-            const string StartLeave = "Que vols fer ?";
-            const string HowToPlay = "1. Jugar a aquesta obra maestra del gaming";
-            const string HowToLeave = "0. Tancar el programa";
-            const string StartError = "Tens que escriure 0 per sortir del programa, o 1 per jugar, no és tan dificil.";
-            const string MenuErrorLeave = "Bueno, si no etc capaç ni de començar a jugar, no continuis.";
-            const string Leave = "Estas segur de que vols marchar? Aquest joc es molt divertit, prem 0 només si estas segur de que no vols jugar. Va, prem 1.";
-            const string LeaveConfirmed = "Bueno, donç moltes gràcies per apofitar d'aquesta manera les hores que he invertit creant això. Que tinguis un mal dia.";
-            const string BackToMenu = "Total d'errors assolits, retornant al menú";
-
-            const string StartToCreate = "Primer toca definir las estadístiques dels personatges, dins del rang que s'especificarà dins de [] Si et surts del limit 3 cops, tornaras a l'inici de crear el personatge. Si això passa 3 cops, tornaras al menú.";
-            const string StartArcher = "El primer personatge és l'arquera.";
-            const string StartKnight = "El segon personatge és el cavaller.";
-            const string StartSorcerer = "El tercer personatge és la maga.";
-            const string StartDruid = "El quart personatge és el druida.";
-            const string StartMonster = "Finalment, el monstre.";
-            const string ErrorInValue = "Has d'introduir un nombre que estigui dins de l'interval especificat.";
-            const string RetryValueInsertion = "Torna a introduir les dades d'aquest personatge.";
-
-            const string ArcherHP = "Introdueix la vida que tindrà l'arquera [1500-2000]";
-            const string KnightHP = "Introdueix la vida que tindrà el cavaller [3000-3750]";
-            const string SorcererHP = "Introdueix la vida que tindrà la maga [1000-1500]";
-            const string DruidHP = "Introdueix la vida que tindrà el druida [2000-2500]";
-            const string MonsterHP = "Introdueix la vida que tindrà el monstre [9000-12000]";
-
-            const string ArcherDmg = "Introdueix l'atac que tindrà l'arquera [180-300]";
-            const string KnightDmg = "Introdueix l'atac  que tindrà el cavaller [150-250]";
-            const string SorcererDmg = "Introdueix l'atac que tindrà la maga [300-350]";
-            const string DruidDmg = "Introdueix l'atac que tindrà el druida [70-120]";
-            const string MonsterDmg = "Introdueix l'atac que tindrà el monstre [250-400]";
-
-            const string ArcherDmgReduction = "Introdueix la reducció de dany que tindrà l'arquera [25-40]%";
-            const string KnightDmgReduction = "Introdueix la reducció de dany que tindrà el cavaller [35-45]%";
-            const string SorcererDmgReduction = "Introdueix la reducció de dany que tindrà la maga [20-35]%";
-            const string DruidDmgReduction = "Introdueix la reducció de dany que tindrà el druida [25-40]%";
-            const string MonsterDmgReduction = "Introdueix la reducció de dany que tindrà el monstre [20-30]%";
-
-            const string BattleStart = "Comença la batalla conta el monstre. Recorda que les habilitats dels personatges tenen un cooldown de 5 torns, i que fer 3 errors al seleccionar l'ació d'un personatge et retornarà al menú. ";
-            const string ArcherTurn = "És el torn de l'arquera";
-            const string KnightTurn = "És el torn del cavaller";
-            const string SorcererTurn = "És el torn de la maga";
-            const string DruidTurn = "És el torn del druida";
-            const string Attack = "1. Atacar al monstre";
-            const string Defense = "2. Defensarse (Duplica la reducció de dany aquest torn)";
-            const string DefenseArcher = "L'arquera es defensarà aquest torn.";
-            const string DefenseKnight = "El cavaller es defensarà aquest torn";
-            const string DefenseSorcerer = "La maga es defensarà aquesta ronda";
-            const string DefenseDruid = "El druida es defensarà aquesta ronda";
-            const string HabilityArcher = "3. Stunea al monstre durant 2 torns";
-            const string HabilityKnight = "3. El cavaller es torna invulnerable al dany durant 3 torns";
-            const string HabilitySorcerer = "3. Lança una bola de foc al monstre que fa el triple de dany que l'atac normal de la maga";
-            const string HabilityDruid = "3. Retorna 500 de vida als teus aliats. No pot sobrepasar la seva vida màxima";
-            const string CombatError = "1 per atacar, 2 per defensar-se, 3 per l'abilitat, no és tan difícil.";
-            const string MonsterDefeated = "Felicitats, has acabat amb el monstre";
-            const string ArcherDead = "La arquera s'acaba de morir";
-            const string KnightDead = "El cavaller s'acaba de morir";
-            const string SorcererDead = "La maga s'acaba de morir";
-            const string DruidDead = "El druida s'acaba de morir";
-            const string ArcherStun = "L'arquera a stunejat al monstre durant 2 turns";
-            const string HabilityOnCooldown = "Aquesta habilitat està en cooldown";
-            const string MonsterStuned = "El monstre està stunejat i no atacarà aquest torn";
-            const string KnightHability = "El cavaller  es protegeix, i serà invulnerabble al dany durant tres torns";
-            const string KnightHabilityActive = "El monstre ataca al cavaller, pero al cavaller se la pela tot";
-            const string KnightDefendWhileabilityActive = "Això no ha servit de res perquè igualment no habria rebut dany, però no et desanimis campió";
-
-            const string BlankLine = " ";
-
-            const decimal Zero = 0;
-            const decimal One = 1;
-            const decimal Two = 2;
-            const decimal Three = 3;
-            const decimal Five = 5;
-            const decimal Twenty = 20;
-            const decimal Thirty = 30;
-            const decimal Seventy = 70;
-            const decimal OneHundred = 100;
-            const decimal OneHundredAndTwenty = 120;
-            const decimal FiveHundred = 500;
-            const decimal OneThousandFiveHundred = 1500;
-            const decimal TwoThousand = 2000;
-            const decimal TwoThousandAndFiveHundred = 2500;
-            const decimal OneHundredAndEighty = 180;
-            const decimal ThreeHundred = 300;
-            const decimal TwentyFive = 25;
-            const decimal Forty = 40;
-            const decimal ThreeThousand = 3000;
-            const decimal ThreeThousandSevenHundredSeventyFive = 3750;
-            const decimal OneHundredAndFifty = 150;
-            const decimal TwoHundredAndFifty = 250;
-            const decimal FourHundred = 400;
-            const decimal ThirtyFive = 35;
-            const decimal FortyFive = 45;
-            const decimal OneThousand = 1000;
-            const decimal ThreeHundredAndFifty = 350;
-            const decimal NineThousand = 9000;
-            const decimal TwelveThousand = 12000;
+            
 
 
-            decimal menuErrors = Zero;
-            decimal totalErrors = Zero;
+            decimal menuErrors = Class1.Zero;
+            decimal totalErrors = Class1.Zero;
             decimal startGame = One;
             decimal leave = One;
-            decimal errorsInStat = Zero;
-            decimal errorsInCharacter = Zero;
-            decimal archerHP = Zero, knightHP = Zero, sorcererHP = Zero, druidHP = Zero, monsterHP = Zero;
-            decimal archerMaxHP = Zero, knightMaxHP = Zero, sorcererMaxHP = Zero, druidMaxHP = Zero;
-            decimal archerDmg = Zero, knightDmg = Zero, sorcererDmg = Zero, druidDmg = Zero, monsterDmg = Zero;
-            decimal archerDmgReduction = Zero, knightDmgReduction = Zero, sorcererDmgReduction = Zero, druidDmgReduction = Zero, monsterDmgReduction = Zero;
+            decimal errorsInStat = Class1.Zero;
+            decimal errorsInCharacter = Class1.Zero;
+            decimal archerHP = Class1.Zero, knightHP = Class1.Zero, sorcererHP = Class1.Zero, druidHP = Class1.Zero, monsterHP = Class1.Zero;
+            decimal archerMaxHP = Class1.Zero, knightMaxHP = Class1.Zero, sorcererMaxHP = Class1.Zero, druidMaxHP = Class1.Zero;
+            decimal archerDmg = Class1.Zero, knightDmg = Class1.Zero, sorcererDmg = Class1.Zero, druidDmg = Class1.Zero, monsterDmg = Class1.Zero;
+            decimal archerDmgReduction = Class1.Zero, knightDmgReduction = Class1.Zero, sorcererDmgReduction = Class1.Zero, druidDmgReduction = Class1.Zero, monsterDmgReduction = Class1.Zero;
 
 
-            decimal errorsInBattle = Zero;
+            decimal errorsInBattle = Class1.Zero;
             bool archerDead = false, knightDead = false, sorcererDead = false, druidDead = false, monsterDead = false;
             bool archerDefended = false, knightDefended = false, sorcererDefended = false, druidDefended = false;
-            decimal archerCooldown = Zero, knightCooldown = Zero, sorcererCooldown = Zero, druidCooldown = Zero;
+            decimal archerCooldown = Class1.Zero, knightCooldown = Class1.Zero, sorcererCooldown = Class1.Zero, druidCooldown = Class1.Zero;
             bool firstHabilityArcher = true, firstHabilityKnight = true, firstHabilitySorcerer = true, firstHabilityDruid = true;
             decimal currentTurn = One;
-            decimal currentAction = Zero;
-            decimal damageDealt = Zero;
+            decimal currentAction = Class1.Zero;
+            decimal damageDealt = Class1.Zero;
             bool characterTurnEnded = false;
             bool monsterStuned = false;
             decimal stunDuration = Two;
@@ -138,8 +44,8 @@ namespace PR1
 
             while (startGame == One && leave == One) /* Bucle per a que el programa se repeteixi */
             {
-                errorsInCharacter = Zero;
-                errorsInBattle = Zero;
+                errorsInCharacter = Class1.Zero;
+                errorsInBattle = Class1.Zero;
                 archerCreationCorrect = false;
                 knightCreationCorrect = false;
                 sorcererCreationCorrect = false;
@@ -166,14 +72,14 @@ namespace PR1
                     Console.WriteLine(HowToLeave);
                     Console.WriteLine(HowToPlay);
                     startGame = Convert.ToDecimal(Console.ReadLine());
-                    leave = Zero;
+                    leave = Class1.Zero;
 
-                    if (startGame == Zero)
+                    if (startGame == Class1.Zero)
                     {
                         Console.WriteLine(BlankLine);
                         Console.WriteLine(Leave);  /*Missatge per a confirmar la sortida del programa*/
                         leave = Convert.ToDecimal(Console.ReadLine());
-                        if (leave == Zero)
+                        if (leave == Class1.Zero)
                         {
                             Console.WriteLine(LeaveConfirmed);
                             menuErrors = Three;
@@ -182,7 +88,7 @@ namespace PR1
                         else
                             startGame = One;
                     }
-                    if ((startGame != One && startGame != Zero) || (leave != One && leave != Zero)) /*Codi en cas d'error al menú*/
+                    if ((startGame != One && startGame != Class1.Zero) || (leave != One && leave != Class1.Zero)) /*Codi en cas d'error al menú*/
                     {
                         Console.WriteLine(StartError);
                         menuErrors++;
@@ -199,14 +105,14 @@ namespace PR1
 
                 if (totalErrors < Three) /* Condicional que només inicia el programa si hi han menos de 3 errors al menú*/
                 {
-                    menuErrors = Zero;
-                    totalErrors = Zero;
+                    menuErrors = Class1.Zero;
+                    totalErrors = Class1.Zero;
                     Console.WriteLine(BlankLine);
                     Console.WriteLine(StartToCreate);
 
                     while (errorsInCharacter < Three) /*Bucle per a la creacio de personatges*/
                     {
-                        errorsInStat = Zero;
+                        errorsInStat = Class1.Zero;
                         repeatStats = false;
                         if (archerCreationCorrect == false)
                         {
@@ -235,7 +141,7 @@ namespace PR1
 
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -257,7 +163,7 @@ namespace PR1
                                     }
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -285,7 +191,7 @@ namespace PR1
 
                         if (repeatStats == false)
                         {
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             archerCreationCorrect = true;
                         } /*Això asegura que si es reinicia la creació d'un personatge no es comença desde el primer personatge sino desde en el que estaves*/
 
@@ -314,7 +220,7 @@ namespace PR1
                                     }
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -338,7 +244,7 @@ namespace PR1
 
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -368,7 +274,7 @@ namespace PR1
 
                         if (repeatStats == false)
                         {
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             knightCreationCorrect = true;
                         }
 
@@ -397,7 +303,7 @@ namespace PR1
                                     }
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -421,7 +327,7 @@ namespace PR1
 
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -449,7 +355,7 @@ namespace PR1
 
                         if (repeatStats == false)
                         {
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             sorcererCreationCorrect = true;
                         }
 
@@ -478,7 +384,7 @@ namespace PR1
                                     }
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -502,7 +408,7 @@ namespace PR1
 
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -531,7 +437,7 @@ namespace PR1
 
                         if (repeatStats == false)
                         {
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             druidCreationCorrect = true;
                         }
 
@@ -560,7 +466,7 @@ namespace PR1
                                     }
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -584,7 +490,7 @@ namespace PR1
 
                                 }
                             }
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             while (errorsInStat < Three && repeatStats == false)
                             {
                                 Console.WriteLine(BlankLine);
@@ -611,7 +517,7 @@ namespace PR1
                         }
                         if (repeatStats == false)
                         {
-                            errorsInStat = Zero;
+                            errorsInStat = Class1.Zero;
                             monsterCreationCorrect = true;
                             errorsInCharacter = Three;
                         }
@@ -634,7 +540,7 @@ namespace PR1
                             if (errorsInBattle != Three)
                             {
                                 characterTurnEnded = false;
-                                errorsInBattle = Zero;
+                                errorsInBattle = Class1.Zero;
                                 /*Comproba que el bucle del combat es repeteixi excepte quan es fan 3 errors seguits, i reinicia els erros si s'han fet però han sigut menys de tres*/
                             }
                             if (archerDead == false && monsterDead == false && characterTurnEnded == false)
@@ -656,7 +562,7 @@ namespace PR1
                                             Console.WriteLine(BlankLine);
                                             Console.WriteLine("L'arquera ha atacat al monstre fent-li " + damageDealt + " de dany.");
                                             characterTurnEnded = true;
-                                            if (monsterHP < Zero)
+                                            if (monsterHP < Class1.Zero)
                                             {
                                                 monsterDead = true;
                                                 Console.WriteLine(MonsterDefeated);
@@ -700,7 +606,7 @@ namespace PR1
                             if (errorsInBattle != Three)
                             {
                                 characterTurnEnded = false;
-                                errorsInBattle = Zero;
+                                errorsInBattle = Class1.Zero;
                             }
 
 
@@ -724,7 +630,7 @@ namespace PR1
                                             Console.WriteLine(BlankLine);
                                             Console.WriteLine("El cavaller ha atacat al monstre fent-li " + damageDealt + " de dany.");
                                             characterTurnEnded = true;
-                                            if (monsterHP < Zero)
+                                            if (monsterHP < Class1.Zero)
                                             {
                                                 monsterDead = true;
                                                 Console.WriteLine(MonsterDefeated);
@@ -738,7 +644,7 @@ namespace PR1
                                             knightDefended = true;
                                             Console.WriteLine(DefenseKnight);
                                             characterTurnEnded = true;
-                                            if (knightHability > Zero)
+                                            if (knightHability > Class1.Zero)
                                                 Console.WriteLine(KnightDefendWhileabilityActive);
                                             break;
                                         case Three:
@@ -772,7 +678,7 @@ namespace PR1
                             if (errorsInBattle != Three)
                             {
                                 characterTurnEnded = false;
-                                errorsInBattle = Zero;
+                                errorsInBattle = Class1.Zero;
                             }
 
 
@@ -795,7 +701,7 @@ namespace PR1
                                             Console.WriteLine(BlankLine);
                                             Console.WriteLine("La maga ha atacat al monstre fent-li " + damageDealt + " de dany.");
                                             characterTurnEnded = true;
-                                            if (monsterHP < Zero)
+                                            if (monsterHP < Class1.Zero)
                                             {
                                                 monsterDead = true;
                                                 Console.WriteLine(MonsterDefeated);
@@ -821,7 +727,7 @@ namespace PR1
                                                 sorcererCooldown = currentTurn + Five;
                                                 firstHabilitySorcerer = false;
                                                 characterTurnEnded = true;
-                                                if (monsterHP < Zero)
+                                                if (monsterHP < Class1.Zero)
                                                 {
                                                     monsterDead = true;
                                                     Console.WriteLine(MonsterDefeated);
@@ -847,7 +753,7 @@ namespace PR1
                             if (errorsInBattle != Three)
                             {
                                 characterTurnEnded = false;
-                                errorsInBattle = Zero;
+                                errorsInBattle = Class1.Zero;
                             }
 
 
@@ -870,7 +776,7 @@ namespace PR1
                                             Console.WriteLine(BlankLine);
                                             Console.WriteLine("El druida ha atacat al monstre fent-li " + damageDealt + " de dany.");
                                             characterTurnEnded = true;
-                                            if (monsterHP < Zero)
+                                            if (monsterHP < Class1.Zero)
                                             {
                                                 monsterDead = true;
                                                 Console.WriteLine(MonsterDefeated);
@@ -968,14 +874,14 @@ namespace PR1
                             if (errorsInBattle != Three)
                             {
                                 characterTurnEnded = false;
-                                errorsInBattle = Zero;
+                                errorsInBattle = Class1.Zero;
                             }
 
                             if (monsterStuned == true)
                             {
                                 Console.WriteLine(MonsterStuned);
                                 stunDuration--;
-                                if (stunDuration == Zero)
+                                if (stunDuration == Class1.Zero)
                                 {
                                     stunDuration = Two;
                                     monsterStuned = false;
@@ -989,7 +895,7 @@ namespace PR1
 
                                     Console.WriteLine("El monstre li ha fet " + damageDealt + " de dany a l'arquera.");
                                     archerHP -= damageDealt;
-                                    if (archerHP <= Zero)
+                                    if (archerHP <= Class1.Zero)
                                     {
                                         archerDead = true;
                                         Console.WriteLine(ArcherDead);
@@ -1001,12 +907,12 @@ namespace PR1
                                 }
                                 if (knightDead == false)
                                 {
-                                    if (knightHability > Zero)
+                                    if (knightHability > Class1.Class1.Zero)
                                     {
                                         Console.WriteLine(BlankLine);
                                         Console.WriteLine(KnightHabilityActive);
                                         Console.WriteLine(BlankLine);
-                                        knightHability = Zero;
+                                        knightHability = Class1.Zero;
                                     }
 
                                     else
@@ -1015,7 +921,7 @@ namespace PR1
                                         Console.WriteLine(BlankLine);
                                         Console.WriteLine("El monstre li ha fet " + damageDealt + " de dany al cavaller.");
                                         knightHP -= damageDealt;
-                                        if (knightHP <= Zero)
+                                        if (knightHP <= Class1.Zero)
                                         {
                                             knightDead = true;
                                             Console.WriteLine(KnightDead);
@@ -1031,7 +937,7 @@ namespace PR1
                                     damageDealt = monsterDmg - monsterDmg * (sorcererDmgReduction / OneHundred);
                                     Console.WriteLine("El monstre li ha fet " + damageDealt + " de dany a la maga.");
                                     sorcererHP -= damageDealt;
-                                    if (sorcererHP <= Zero)
+                                    if (sorcererHP <= Class1.Zero)
                                     {
                                         sorcererDead = true;
                                         Console.WriteLine(SorcererDead);
@@ -1046,7 +952,7 @@ namespace PR1
                                     damageDealt = monsterDmg - monsterDmg * (druidDmgReduction / OneHundred);
                                     Console.WriteLine("El monstre li ha fet " + damageDealt + " de dany al druida.");
                                     druidHP -= damageDealt;
-                                    if (druidHP <= Zero)
+                                    if (druidHP <= Class1.Zero)
                                     {
                                         druidDead = true;
                                         Console.WriteLine(DruidDead);
