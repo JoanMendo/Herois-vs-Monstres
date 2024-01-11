@@ -9,13 +9,11 @@ namespace PR1
     {
         public static void Main()
         {
-            
-
 
             decimal menuErrors = Class1.Zero;
             decimal totalErrors = Class1.Zero;
-            decimal startGame = One;
-            decimal leave = One;
+            decimal startGame = Class1.One;
+            decimal leave = Class1.One;
             decimal errorsInStat = Class1.Zero;
             decimal errorsInCharacter = Class1.Zero;
             decimal archerHP = Class1.Zero, knightHP = Class1.Zero, sorcererHP = Class1.Zero, druidHP = Class1.Zero, monsterHP = Class1.Zero;
@@ -29,20 +27,20 @@ namespace PR1
             bool archerDefended = false, knightDefended = false, sorcererDefended = false, druidDefended = false;
             decimal archerCooldown = Class1.Zero, knightCooldown = Class1.Zero, sorcererCooldown = Class1.Zero, druidCooldown = Class1.Zero;
             bool firstHabilityArcher = true, firstHabilityKnight = true, firstHabilitySorcerer = true, firstHabilityDruid = true;
-            decimal currentTurn = One;
+            decimal currentTurn = Class1.One;
             decimal currentAction = Class1.Zero;
             decimal damageDealt = Class1.Zero;
             bool characterTurnEnded = false;
             bool monsterStuned = false;
-            decimal stunDuration = Two;
-            decimal knightHability = Three;
+            decimal stunDuration = Class1.Two;
+            decimal knightHability = Class1.Three;
 
             bool repeatStats = false;
             bool archerCreationCorrect = false, knightCreationCorrect = false, sorcererCreationCorrect = false, druidCreationCorrect = false, monsterCreationCorrect = false;
 
-            Console.WriteLine(StartingMsg);
+            Console.WriteLine(Class1.StartingMsg);
 
-            while (startGame == One && leave == One) /* Bucle per a que el programa se repeteixi */
+            while (startGame == Class1.One && leave == Class1.One) /* Bucle per a que el programa se repeteixi */
             {
                 errorsInCharacter = Class1.Zero;
                 errorsInBattle = Class1.Zero;
@@ -61,19 +59,23 @@ namespace PR1
                 sorcererDead = false;
                 druidDead = false;
                 monsterDead = false;
-                currentTurn = One;
+                currentTurn = Class1.One;
                 monsterStuned = false;
-                stunDuration = Two;
+                stunDuration = Class1.Two;
 
-                Console.WriteLine(StartLeave); /*Missatge inicial*/
+                Console.WriteLine(Class1.StartLeave); /*Missatge inicial*/
 
-                while (menuErrors < Three)  /*Bucle per a poder fer 3 errors al menú*/
+                while (menuErrors < Class1.Three)  /*Bucle per a poder fer 3 errors al menú*/
                 {
-                    Console.WriteLine(HowToLeave);
-                    Console.WriteLine(HowToPlay);
+                    Console.WriteLine(Class1.HowToLeave);
+                    Console.WriteLine(Class1.HowToPlay);
                     startGame = Convert.ToDecimal(Console.ReadLine());
                     leave = Class1.Zero;
 
+                    if (Class2.startingMenu(leave)= Class1.Two)
+                    {
+                        menuErrors++;
+                    }
                     if (startGame == Class1.Zero)
                     {
                         Console.WriteLine(BlankLine);

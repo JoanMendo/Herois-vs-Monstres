@@ -82,7 +82,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

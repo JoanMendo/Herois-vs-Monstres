@@ -70,7 +70,7 @@
 
         public const string BlankLine = " ";
 
-        public public const decimal Zero = 0;
+        public const decimal Zero = 0;
         public const decimal One = 1;
         public const decimal Two = 2;
         public const decimal Three = 3;
