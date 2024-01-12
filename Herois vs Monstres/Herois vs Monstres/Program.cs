@@ -14,6 +14,10 @@ namespace PR1
             int errors = Nums.Zero;
             int initialAnswer = Nums.Zero;
             int stayOrLeave = Nums.Zero;
+            int difficulty = Nums.Zero;
+            string names;
+            string[] namesArray;
+ 
 
             Console.ForegroundColor = ConsoleColor.Green;
             for (int i = Nums.Zero; i < Text.StartingMessages.Length; i++)
@@ -27,19 +31,47 @@ namespace PR1
                 stayOrLeave = Class2.StartingMenu(initialAnswer);
                 if (stayOrLeave == Nums.Two)
                     errors++;
-            } while (errors < Nums.Three && (stayOrLeave != Nums.Zero && stayOrLeave != Nums.One));
+            } while (Class2.TotalErrorsAchieved(errors) == false);
 
-            if (errors == Nums.Three)
-            {
-                Console.WriteLine(Text.MenuErrorLeave);
-            }
-            else if (stayOrLeave == Nums.One)
-            {
-                
-            }
+            Class2.TotalErrorsAchieved(errors);
 
-            
+            if (stayOrLeave == Nums.One)
+            {
+                Console.WriteLine(Text.IntroduceNames);
                 
+                do
+                {
+                    names = Console.ReadLine();
+                    names = names.ToLower();
+                    namesArray = names.Split(",");
+                    for (int i = Nums.Zero; i < namesArray.Length; i++)
+                    {
+                        namesArray[i] = namesArray[i].Trim();
+                        namesArray[i] = char.ToUpper(namesArray[i][Nums.Zero]) + namesArray[i].Substring(Nums.One);
+                    }
+                    errors += Class2.CharacterNamesCheck(namesArray);
+                    
+                } while (Class2.TotalErrorsAchieved(errors) == false);
+
+                Class2.TotalErrorsAchieved(errors);
+
+                if (namesArray.Length == Nums.Four)
+                {
+                    for (int i = Nums.Zero; i < namesArray.Length; i++)
+                    {
+                        Console.WriteLine(Text.BlankLine);
+                        Console.WriteLine(Text.DificultyMessages[i]);
+                    }
+                    do
+                    {
+                        difficulty = Convert.ToInt32(Console.ReadLine());
+
+                        errors += Class2.DifficultyCheck(difficulty);
+                    } while (Class2.TotalErrorsAchieved(errors) == false);
+                    
+                }
+
+            }            
         }
     }
 }
