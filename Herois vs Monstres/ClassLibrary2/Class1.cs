@@ -4,46 +4,28 @@ namespace Metodos
 {
     public class Class2
     {
-        public static int StartingMenu (decimal startGame)
+        public static int StartingMenu (int startGame)
         {
-            decimal leave = Class1.Zero;
-            if (startGame == 0)
+            
+            if (startGame == Nums.Zero)
             {
-                Console.WriteLine(Class1.BlankLine);
-                Console.WriteLine(Class1.Leave);  /*Missatge per a confirmar la sortida del programa*/
-                Console.WriteLine(Class1.BlankLine);
-                leave = Convert.ToDecimal(Console.ReadLine());
-                return leaveGame(leave);
-            }
-            else if (startGame == 1)
-            {
-                return 1;
-            }
-            else
-            {
-                Console.WriteLine(Class1.StartError);
-                return 2;
-            }
-        }
-        public static int leaveGame (decimal leave)
-        {
-            if (leave == 0)
-            {
+                Console.WriteLine(Text.BlankLine);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(Class1.BlankLine);
-                Console.WriteLine(Class1.LeaveConfirmed);
+                Console.WriteLine(Text.BlankLine);
+                Console.WriteLine(Text.LeaveConfirmed);
                 Console.ForegroundColor = ConsoleColor.White;
-                return 0;
+                Console.WriteLine(Text.BlankLine);
+                return Nums.Zero;
             }
-            else if (leave == 1)
+            else if (startGame == Nums.One)
             {
-                return 1;
+                return Nums.One;
             }
             else
             {
-                Console.WriteLine(Class1.StartError);
-                return 2;
+                Console.WriteLine(Text.StartError);
+                return Nums.Two;
             }
-        }
+        }   
     }
 }

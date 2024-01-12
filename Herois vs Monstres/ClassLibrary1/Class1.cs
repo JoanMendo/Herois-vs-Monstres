@@ -1,4 +1,4 @@
-﻿namespace ConstantsUsed
+﻿namespace Constants
 {
     public class Text
     {
@@ -8,11 +8,10 @@
         public const string StartLeave = "Que vols fer ?";
         public const string HowToPlay = "1. Jugar a aquesta obra maestra del gaming";
         public const string HowToLeave = "0. Tancar el programa";
+
         public const string StartError = "Tens que escriure 0 per sortir del programa, o 1 per jugar, no és tan dificil.";
         public const string MenuErrorLeave = "Bueno, si no etc capaç ni de començar a jugar, no continuis.";
-        public const string Leave = "Estas segur de que vols marchar? Aquest joc es molt divertit, prem 0 només si estas segur de que no vols jugar. Va, prem 1.";
         public const string LeaveConfirmed = "Bueno, donç moltes gràcies per apofitar d'aquesta manera les hores que he invertit creant això. Que tinguis un mal dia.";
-        public const string BackToMenu = "Total d'errors assolits, retornant al menú";
 
         public const string StartToCreate = "Primer toca definir las estadístiques dels personatges, dins del rang que s'especificarà dins de [] Si et surts del limit 3 cops, tornaras a l'inici de crear el personatge. Si això passa 3 cops, tornaras al menú.";
         public const string StartArcher = "El primer personatge és l'arquera.";
