@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using System.Threading;
 using Constants;
 using Metodos;
@@ -31,9 +32,9 @@ namespace PR1
                 stayOrLeave = Class2.StartingMenu(initialAnswer);
                 if (stayOrLeave == Nums.Two)
                     errors++;
-            } while (Class2.TotalErrorsAchieved(errors) == false);
+            } while (errors != Nums.Three && (stayOrLeave != Nums.Zero && stayOrLeave != Nums.One));
 
-            Class2.TotalErrorsAchieved(errors);
+            Class2.TotalErrorsAchievedMessage(errors);
 
             if (stayOrLeave == Nums.One)
             {
@@ -51,9 +52,9 @@ namespace PR1
                     }
                     errors += Class2.CharacterNamesCheck(namesArray);
                     
-                } while (Class2.TotalErrorsAchieved(errors) == false);
+                } while (errors != Nums.Three && namesArray.Length != Nums.Four);
 
-                Class2.TotalErrorsAchieved(errors);
+                Class2.TotalErrorsAchievedMessage(errors);
 
                 if (namesArray.Length == Nums.Four)
                 {
@@ -65,9 +66,11 @@ namespace PR1
                     do
                     {
                         difficulty = Convert.ToInt32(Console.ReadLine());
-
-                        errors += Class2.DifficultyCheck(difficulty);
-                    } while (Class2.TotalErrorsAchieved(errors) == false);
+                        Class2.MaxHp(difficulty);
+                        Class2.DamageReduction(difficulty);
+                        Class2.AttackDamage(difficulty);
+                        
+                    } while (errors != Nums.Three && difficulty > Nums.Zero && difficulty < Nums.Zero);
                     
                 }
 

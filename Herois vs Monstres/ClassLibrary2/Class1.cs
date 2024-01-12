@@ -43,25 +43,67 @@ namespace Metodos
             }
             return Nums.Zero;
         }
-        public static bool TotalErrorsAchieved(int errors)
+        public static void TotalErrorsAchievedMessage(int errors)
         {
             if (errors == Nums.Three)
             {
                 Console.WriteLine(Text.MenuErrorLeave);
-                return true;
+
             }
-            return false;
+
         }
-        public static int DifficultyCheck(int difficulty)
+        
+        public static int MaxHp(int selection)
         {
-            if (difficulty > 0 && difficulty < 5)
+            switch (selection)
             {
-                return Nums.Zero;
+                case 1:
+                    return Nums.One;
+                case 2:
+                    return Nums.Two;
+                case 3:
+                    return Nums.Three;
+                case 4:
+                    return Nums.Four;
+                default:
+                    Console.WriteLine(Text.DificultyError);
+                    return Nums.Four;
             }
-            else
+        }
+
+        public static int DamageReduction(int selection)
+        {
+            switch (selection)
             {
-                Console.WriteLine(Text.DificultyError);
-                return Nums.One;
+                case 1:
+                    return Nums.One;
+                case 2:
+                    return Nums.Two;
+                case 3:
+                    return Nums.Three;
+                case 4:
+                    return Nums.Four;
+                default:
+                    Console.WriteLine(Text.DificultyError);
+                    return Nums.Four;
+            }
+        }
+
+        public static int AttackDamage(int selection)
+        {
+            switch (selection)
+            {
+                case 1:
+                    return Nums.One;
+                case 2:
+                    return Nums.Two;
+                case 3:
+                    return Nums.Three;
+                case 4:
+                    return Nums.Four;
+                default:
+                    Console.WriteLine(Text.DificultyError);
+                    return Nums.Four;
             }
         }
     }
