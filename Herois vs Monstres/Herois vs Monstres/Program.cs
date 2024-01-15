@@ -42,6 +42,7 @@ namespace PR1
                 
                 do
                 {
+                    Console.WriteLine(Text.BlankLine);
                     names = Console.ReadLine();
                     names = names.ToLower();
                     namesArray = names.Split(",");

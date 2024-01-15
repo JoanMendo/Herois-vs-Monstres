@@ -10,7 +10,6 @@ namespace Metodos
             
             if (startGame == Nums.Zero)
             {
-                Console.WriteLine(Text.BlankLine);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(Text.BlankLine);
                 Console.WriteLine(Text.LeaveConfirmed);
@@ -20,11 +19,14 @@ namespace Metodos
             }
             else if (startGame == Nums.One)
             {
+                Console.WriteLine(Text.BlankLine);
                 return Nums.One;
             }
             else
             {
+                Console.WriteLine(Text.BlankLine);
                 Console.WriteLine(Text.StartError);
+                Console.WriteLine(Text.BlankLine);
                 return Nums.Two;
             }
         }
@@ -33,12 +35,13 @@ namespace Metodos
             
             if (names.Length != Nums.Four)
             {
-
+                Console.WriteLine(Text.BlankLine);
                 Console.Write(Text.IntroduceNamesError.Substring(0, 16));
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(Text.IntroduceNamesError.Substring(16, 6));
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(Text.IntroduceNamesError.Substring(22, 68));
+                Console.WriteLine(Text.BlankLine);
                 return Nums.One;
             }
             return Nums.Zero;
