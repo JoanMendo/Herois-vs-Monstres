@@ -99,19 +99,21 @@
         public const int OneHundred = 100;
         public const int OneHundredAndTwenty = 120;
         public const int OneHundredAndFifty = 150;
+        public const int OneHundredAndEighty = 180;
+        public const int TwoHundred = 200;
         public const int TwoHundredAndFifty = 250;
+        public const int ThreeHundred = 300;
+        public const int ThreeHundredAndFifty = 350;
+        public const int FourHundred = 400;
         public const int FiveHundred = 500;
+        public const int OneThousand = 1000;
+        public const int OneThousandOneHundred = 1100;
         public const int OneThousandFiveHundred = 1500;
         public const int TwoThousand = 2000;
         public const int TwoThousandAndFiveHundred = 2500;
-        public const int OneHundredAndEighty = 180;
-        public const int ThreeHundred = 300;
         public const int ThreeThousand = 3000;
         public const int ThreeThousandSevenHundredSeventyFive = 3750;
-        public const int FourHundred = 400;
-        public const int OneThousand = 1000;
-        public const int ThreeHundredAndFifty = 350;
-        public const int NineThousand = 9000;
-        public const int TwelveThousand = 12000;
+        public const int SevenThousand = 7000;
+        public const int TenThousand = 10000;
     } 
 }

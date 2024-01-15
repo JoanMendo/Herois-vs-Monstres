@@ -56,14 +56,16 @@ namespace Metodos
 
         }
         
-        public static int MaxHp(int selection)
+        public static double[] MaxHp(int selection)
         {
             switch (selection)
             {
                 case 1:
-                    return Nums.One;
+                    double[] EasyHP = {Nums.TwoThousand,Nums.ThreeThousandSevenHundredSeventyFive, Nums.OneThousandFiveHundred, Nums.TwoThousandAndFiveHundred, Nums.SevenThousand};
+                    return EasyHP;
                 case 2:
-                    return Nums.Two;
+                    double[] HardHP = {Nums.OneHundredAndFifty, Nums.ThreeThousand, Nums.OneThousandOneHundred, Nums.TwoThousand, Nums.TenThousand};
+                    return HardHP;
                 case 3:
                     return Nums.Three;
                 case 4:
@@ -74,14 +76,16 @@ namespace Metodos
             }
         }
 
-        public static int DamageReduction(int selection)
+        public static int[] DamageReduction(int selection)
         {
             switch (selection)
             {
                 case 1:
-                    return Nums.One;
+                    int[] EasyDMG = {Nums.ThreeHundred, Nums.TwoHundredAndFifty, Nums.FourHundred, Nums.OneHundredAndTwenty, Nums.ThreeHundred};
+                    return EasyDMG;
                 case 2:
-                    return Nums.Two;
+                    int[] HardDMG = {Nums.TwoHundred, Nums.OneHundredAndFifty, Nums.ThreeHundred, Nums.Seventy, Nums.FourHundred};
+                    return HardDMG;
                 case 3:
                     return Nums.Three;
                 case 4:
@@ -92,14 +96,16 @@ namespace Metodos
             }
         }
 
-        public static int AttackDamage(int selection)
+        public static int[] AttackDamage(int selection)
         {
             switch (selection)
             {
                 case 1:
-                    return Nums.One;
+                    int[] EasyDMGReduction = {Nums.ThirtyFive, Nums.FortyFive, Nums.ThirtyFive, Nums.Forty, Nums.Twenty};
+                    return EasyDMGReduction;
                 case 2:
-                    return Nums.Two;
+                    int[] HardDMGReduction = {Nums.TwentyFive, Nums.ThirtyFive, Nums.Twenty, Nums.TwentyFive, Nums.Thirty};
+                    return HardDMGReduction;
                 case 3:
                     return Nums.Three;
                 case 4:

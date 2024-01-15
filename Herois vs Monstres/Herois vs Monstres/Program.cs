@@ -16,6 +16,9 @@ namespace PR1
             int initialAnswer = Nums.Zero;
             int stayOrLeave = Nums.Zero;
             int difficulty = Nums.Zero;
+            double[] HP;
+            int[] DMG; 
+            int [] DMGReduction;
             string names;
             string[] namesArray;
  
@@ -67,9 +70,9 @@ namespace PR1
                     do
                     {
                         difficulty = Convert.ToInt32(Console.ReadLine());
-                        Class2.MaxHp(difficulty);
-                        Class2.DamageReduction(difficulty);
-                        Class2.AttackDamage(difficulty);
+                        HP = Class2.MaxHp(difficulty);
+                        DMG = Class2.DamageReduction(difficulty);
+                        DMGReduction = Class2.AttackDamage(difficulty);
                         
                     } while (errors != Nums.Three && difficulty > Nums.Zero && difficulty < Nums.Zero);
                     
