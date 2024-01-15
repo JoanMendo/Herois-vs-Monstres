@@ -8,49 +8,49 @@ namespace Metodos
         public static int StartingMenu (int startGame)
         {
             
-            if (startGame == Nums.Zero)
+            if (startGame == Const.Zero)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(Text.BlankLine);
-                Console.WriteLine(Text.LeaveConfirmed);
+                Console.WriteLine(Const.BlankLine);
+                Console.WriteLine(Const.LeaveConfirmed);
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(Text.BlankLine);
-                return Nums.Zero;
+                Console.WriteLine(Const.BlankLine);
+                return Const.Zero;
             }
-            else if (startGame == Nums.One)
+            else if (startGame == Const.One)
             {
-                Console.WriteLine(Text.BlankLine);
-                return Nums.One;
+                Console.WriteLine(Const.BlankLine);
+                return Const.One;
             }
             else
             {
-                Console.WriteLine(Text.BlankLine);
-                Console.WriteLine(Text.StartError);
-                Console.WriteLine(Text.BlankLine);
-                return Nums.Two;
+                Console.WriteLine(Const.BlankLine);
+                Console.WriteLine(Const.StartError);
+                Console.WriteLine(Const.BlankLine);
+                return Const.Two;
             }
         }
         public static int CharacterNamesCheck(string[] names)
         {
             
-            if (names.Length != Nums.Four)
+            if (names.Length != Const.Four)
             {
-                Console.WriteLine(Text.BlankLine);
-                Console.Write(Text.IntroduceNamesError.Substring(0, 16));
+                Console.WriteLine(Const.BlankLine);
+                Console.Write(Const.IntroduceNamesError.Substring(0, 16));
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(Text.IntroduceNamesError.Substring(16, 6));
+                Console.Write(Const.IntroduceNamesError.Substring(16, 6));
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(Text.IntroduceNamesError.Substring(22, 68));
-                Console.WriteLine(Text.BlankLine);
-                return Nums.One;
+                Console.Write(Const.IntroduceNamesError.Substring(22, 68));
+                Console.WriteLine(Const.BlankLine);
+                return Const.One;
             }
-            return Nums.Zero;
+            return Const.Zero;
         }
         public static void TotalErrorsAchievedMessage(int errors)
         {
-            if (errors == Nums.Three)
+            if (errors == Const.Three)
             {
-                Console.WriteLine(Text.MenuErrorLeave);
+                Console.WriteLine(Const.MenuErrorLeave);
 
             }
 
@@ -60,19 +60,25 @@ namespace Metodos
         {
             switch (selection)
             {
-                case 1:
-                    double[] EasyHP = {Nums.TwoThousand,Nums.ThreeThousandSevenHundredSeventyFive, Nums.OneThousandFiveHundred, Nums.TwoThousandAndFiveHundred, Nums.SevenThousand};
+                case Const.One:
+                    double[] EasyHP = {Const.TwoThousand,Const.ThreeThousandSevenHundredSeventyFive, Const.OneThousandFiveHundred, Const.TwoThousandAndFiveHundred, Const.SevenThousand};
                     return EasyHP;
-                case 2:
-                    double[] HardHP = {Nums.OneHundredAndFifty, Nums.ThreeThousand, Nums.OneThousandOneHundred, Nums.TwoThousand, Nums.TenThousand};
+                case Const.Two:
+                    double[] HardHP = {Const.OneHundredAndFifty, Const.ThreeThousand, Const.OneThousandOneHundred, Const.TwoThousand, Const.TenThousand};
                     return HardHP;
-                case 3:
-                    return Nums.Three;
-                case 4:
-                    return Nums.Four;
+                case Const.Three:
+                    Random RandomNum = new Random();
+                    double[] RandomHP = { RandomNum.Next(Const.OneHundredAndFifty, Const.TwoThousand), RandomNum.Next(Const.ThreeThousand, Const.ThreeThousandSevenHundredSeventyFive),
+                                          RandomNum.Next(Const.OneThousandOneHundred, Const.OneThousandFiveHundred), 
+                                          RandomNum.Next(Const.TwoThousand, Const.TwoThousandAndFiveHundred), RandomNum.Next(Const.SevenThousand, Const.TenThousand)};
+                    return RandomHP;
+                case Const.Four:
+                    double[] ManualHP = new double[5];
+                    return ManualHP;
                 default:
-                    Console.WriteLine(Text.DificultyError);
-                    return Nums.Four;
+                    Console.WriteLine(Const.DificultyError);
+                    double[] error = new double[5];
+                    return error;
             }
         }
 
@@ -80,19 +86,25 @@ namespace Metodos
         {
             switch (selection)
             {
-                case 1:
-                    int[] EasyDMG = {Nums.ThreeHundred, Nums.TwoHundredAndFifty, Nums.FourHundred, Nums.OneHundredAndTwenty, Nums.ThreeHundred};
+                case Const.One:
+                    int[] EasyDMG = {Const.ThreeHundred, Const.TwoHundredAndFifty, Const.FourHundred, Const.OneHundredAndTwenty, Const.ThreeHundred};
                     return EasyDMG;
-                case 2:
-                    int[] HardDMG = {Nums.TwoHundred, Nums.OneHundredAndFifty, Nums.ThreeHundred, Nums.Seventy, Nums.FourHundred};
+                case Const.Two:
+                    int[] HardDMG = {Const.TwoHundred, Const.OneHundredAndFifty, Const.ThreeHundred, Const.Seventy, Const.FourHundred};
                     return HardDMG;
-                case 3:
-                    return Nums.Three;
-                case 4:
-                    return Nums.Four;
+                case Const.Three:
+                    Random RandomNum = new Random();
+                    int[] RandomDMG = { RandomNum.Next(Const.TwoHundred, Const.ThreeHundred), RandomNum.Next(Const.OneHundredAndFifty, Const.TwoHundredAndFifty), 
+                                        RandomNum.Next(Const.ThreeHundred, Const.FourHundred), RandomNum.Next(Const.Seventy, Const.OneHundredAndTwenty), 
+                                        RandomNum.Next(Const.ThreeHundred, Const.FourHundred) };
+                    return RandomDMG;
+                case Const.Four:
+                    int[] ManualDMG = new int[5];
+                    return ManualDMG;
                 default:
-                    Console.WriteLine(Text.DificultyError);
-                    return Nums.Four;
+                    Console.WriteLine(Const.DificultyError);
+                    int[] error = new int[5];
+                    return error;
             }
         }
 
@@ -100,19 +112,40 @@ namespace Metodos
         {
             switch (selection)
             {
-                case 1:
-                    int[] EasyDMGReduction = {Nums.ThirtyFive, Nums.FortyFive, Nums.ThirtyFive, Nums.Forty, Nums.Twenty};
+                case Const.One:
+                    int[] EasyDMGReduction = {Const.ThirtyFive, Const.FortyFive, Const.ThirtyFive, Const.Forty, Const.Twenty};
                     return EasyDMGReduction;
-                case 2:
-                    int[] HardDMGReduction = {Nums.TwentyFive, Nums.ThirtyFive, Nums.Twenty, Nums.TwentyFive, Nums.Thirty};
+                case Const.Two:
+                    int[] HardDMGReduction = {Const.TwentyFive, Const.ThirtyFive, Const.Twenty, Const.TwentyFive, Const.Thirty};
                     return HardDMGReduction;
-                case 3:
-                    return Nums.Three;
-                case 4:
-                    return Nums.Four;
+                case Const.Three:
+                    Random RandomNum = new Random();
+                    int[] RandomDMGReduction = { RandomNum.Next(Const.TwentyFive, Const.ThirtyFive), RandomNum.Next(Const.ThirtyFive, Const.FortyFive),
+                                        RandomNum.Next(Const.Twenty,Const.ThirtyFive), RandomNum.Next(Const.TwentyFive, Const.Forty),
+                                        RandomNum.Next(Const.Twenty, Const.Thirty) };
+                    return RandomDMGReduction;
+                case Const.Four:
+                    int[] ManualDMGReduction = new int[5];
+                    return ManualDMGReduction;
                 default:
-                    Console.WriteLine(Text.DificultyError);
-                    return Nums.Four;
+                    Console.WriteLine(Const.DificultyError);
+                    int[] error = new int[5];
+                    return error;
+            }
+        }
+
+        public static int CharactersStatsCheck(int selection)
+        {
+            if (selection < 1 || selection > 4)
+            {
+                Console.WriteLine(Const.BlankLine);
+                Console.WriteLine(Const.DificultyError);
+                Console.WriteLine(Const.BlankLine);
+                return 1;
+            }
+            else
+            {
+                return 0;
             }
         }
     }

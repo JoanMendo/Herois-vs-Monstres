@@ -1,6 +1,6 @@
 ﻿namespace Constants
 {
-    public class Text
+    public class Const
     {
         /* Definició de constants i variables*/
         public static readonly string[] StartingMessages = { StartingMsg, StartLeave, HowToPlay, HowToLeave };
@@ -80,9 +80,6 @@
 
         public const string BlankLine = " ";
 
-    }
-    public class Nums 
-    {
         public const int Zero = 0;
         public const int One = 1;
         public const int Two = 2;
@@ -115,5 +112,5 @@
         public const int ThreeThousandSevenHundredSeventyFive = 3750;
         public const int SevenThousand = 7000;
         public const int TenThousand = 10000;
-    } 
+    }
 }

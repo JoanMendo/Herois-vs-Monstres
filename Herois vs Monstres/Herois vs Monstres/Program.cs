@@ -12,60 +12,62 @@ namespace PR1
     {
         public static void Main()
         {
-            int errors = Nums.Zero;
-            int initialAnswer = Nums.Zero;
-            int stayOrLeave = Nums.Zero;
-            int difficulty = Nums.Zero;
+            int errors = Const.Zero;
+            int initialAnswer = Const.Zero;
+            int stayOrLeave = Const.Zero;
+            int difficulty = Const.Zero;
             double[] HP;
             int[] DMG; 
             int [] DMGReduction;
             string names;
             string[] namesArray;
- 
+
+
 
             Console.ForegroundColor = ConsoleColor.Green;
-            for (int i = Nums.Zero; i < Text.StartingMessages.Length; i++)
+            for (int i = Const.Zero; i < Const.StartingMessages.Length; i++)
             {
-                Console.WriteLine(Text.StartingMessages[i]);
+                Console.WriteLine(Const.StartingMessages[i]);
             }
-            Console.WriteLine(Text.BlankLine);
+            Console.WriteLine(Const.BlankLine);
             do 
             {
                 initialAnswer = Convert.ToInt32(Console.ReadLine());
                 stayOrLeave = Class2.StartingMenu(initialAnswer);
-                if (stayOrLeave == Nums.Two)
+                if (stayOrLeave == Const.Two)
                     errors++;
-            } while (errors != Nums.Three && (stayOrLeave != Nums.Zero && stayOrLeave != Nums.One));
+            } while (errors != Const.Three && (stayOrLeave != Const.Zero && stayOrLeave != Const.One));
 
             Class2.TotalErrorsAchievedMessage(errors);
 
-            if (stayOrLeave == Nums.One)
+            if (stayOrLeave == Const.One)
             {
-                Console.WriteLine(Text.IntroduceNames);
-                
+                Console.WriteLine(Const.IntroduceNames);
+
                 do
                 {
-                    Console.WriteLine(Text.BlankLine);
+
+                    Console.WriteLine(Const.BlankLine);
                     names = Console.ReadLine();
                     names = names.ToLower();
                     namesArray = names.Split(",");
-                    for (int i = Nums.Zero; i < namesArray.Length; i++)
+                    for (int i = Const.Zero; i < namesArray.Length; i++)
                     {
                         namesArray[i] = namesArray[i].Trim();
-                        namesArray[i] = char.ToUpper(namesArray[i][Nums.Zero]) + namesArray[i].Substring(Nums.One);
+                        namesArray[i] = char.ToUpper(namesArray[i][Const.Zero]) + namesArray[i].Substring(Const.One);
                     }
                     errors += Class2.CharacterNamesCheck(namesArray);
-                    
-                } while (errors != Nums.Three && namesArray.Length != Nums.Four);
+
+                } while (errors != Const.Three && namesArray.Length != Const.Four);
 
                 Class2.TotalErrorsAchievedMessage(errors);
 
-                if (namesArray.Length == Nums.Four)
+                if (namesArray.Length == Const.Four)
                 {
-                    for (int i = Nums.Zero; i < namesArray.Length; i++)
+                    for (int i = Const.Zero; i < namesArray.Length; i++)
                     {
-                        Console.WriteLine(Text.BlankLine);
-                        Console.WriteLine(Text.DificultyMessages[i]);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.DificultyMessages[i]);
                     }
                     do
                     {
@@ -73,12 +75,12 @@ namespace PR1
                         HP = Class2.MaxHp(difficulty);
                         DMG = Class2.DamageReduction(difficulty);
                         DMGReduction = Class2.AttackDamage(difficulty);
-                        
-                    } while (errors != Nums.Three && difficulty > Nums.Zero && difficulty < Nums.Zero);
-                    
-                }
+                        errors += Class2.CharactersStatsCheck(difficulty);
+                    } while (errors != Const.Three &&( difficulty < Const.Zero || difficulty > Const.Four));
 
-            }            
+                }
+            }
+                        
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Herois vs Monstres")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a345939853bf0e0da8d553ad6b7a3a9371fd37d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0c68357626b49e544646c6d36b2710a45416b7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Herois vs Monstres")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Herois vs Monstres")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
