@@ -55,22 +55,5 @@ namespace Metodos
             }
 
         }
-        
- 
-
-        public static int CharactersStatsCheck(int selection)
-        {
-            if (selection < 1 || selection > 4)
-            {
-                Console.WriteLine(Const.BlankLine);
-                Console.WriteLine(Const.DificultyError);
-                Console.WriteLine(Const.BlankLine);
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
     }
 }

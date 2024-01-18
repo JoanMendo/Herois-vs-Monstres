@@ -94,15 +94,22 @@ namespace PR1
                                 }
                                 break;
                             case 4:
-
+                                for (int i = 0; i < Const.Three; i++)
+                                {
+                                    for (int j = 0; j < 5; j++)
+                                    {
+                                        Console.WriteLine($"Introdueix {Const.Stats[j]} de {namesArray[j]} ({Const.EasyHp[j]} - {Const.HardHp[j]})");
+                                        
+                                    }
+                                }
+                                
                                 break;
-
-                            default: errors++;
+                            default: 
+                                errors++;
                                 break;
                         }
 
-                        errors += Class2.CharactersStatsCheck(difficulty);
-                    } while (errors != Const.Three &&( difficulty < Const.Zero || difficulty > Const.Four));
+                    } while (errors != Const.Three && (difficulty < Const.Zero || difficulty > Const.Four));
 
                 }
             }
