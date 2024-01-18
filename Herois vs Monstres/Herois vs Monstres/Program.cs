@@ -16,9 +16,9 @@ namespace PR1
             int initialAnswer = Const.Zero;
             int stayOrLeave = Const.Zero;
             int difficulty = Const.Zero;
-            double[] HP;
-            int[] DMG; 
-            int [] DMGReduction;
+            double[] HP = new double[5];
+            int[] DMG = new int[5]; 
+            int [] DMGReduction = new int[5];
             string names;
             string[] namesArray;
 
@@ -72,9 +72,35 @@ namespace PR1
                     do
                     {
                         difficulty = Convert.ToInt32(Console.ReadLine());
-                        HP = Class2.MaxHp(difficulty);
-                        DMG = Class2.DamageReduction(difficulty);
-                        DMGReduction = Class2.AttackDamage(difficulty);
+                        switch (difficulty)
+                        {
+                            case 1:
+                                HP = Const.EasyHp;
+                                DMG = Const.EasyDMG;
+                                DMGReduction = Const.EasyDMGReduction;
+                                break;
+                            case 2:
+                                HP = Const.HardHp;
+                                DMG = Const.HardDMG;
+                                DMGReduction = Const.HardDMGReduction;
+                                break;
+                            case 3:
+                                for (int i = Const.Zero; i < Const.Five; i++)
+                                {
+                                    Random random = new Random();
+                                    HP[i] = random.NextDouble() * (Const.HardHp[i] - Const.EasyHp[i]) + Const.EasyHp[i];
+                                    DMG[i] = random.Next(Const.EasyDMG[i], Const.HardDMG[i]);
+                                    DMGReduction[i] = random.Next(Const.EasyDMGReduction[i], Const.HardDMGReduction[i]);
+                                }
+                                break;
+                            case 4:
+
+                                break;
+
+                            default: errors++;
+                                break;
+                        }
+
                         errors += Class2.CharactersStatsCheck(difficulty);
                     } while (errors != Const.Three &&( difficulty < Const.Zero || difficulty > Const.Four));
 

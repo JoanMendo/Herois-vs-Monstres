@@ -109,8 +109,14 @@
         public const int TwoThousand = 2000;
         public const int TwoThousandAndFiveHundred = 2500;
         public const int ThreeThousand = 3000;
-        public const int ThreeThousandSevenHundredSeventyFive = 3750;
+        public const int ThreeThousandSevenHundredFifty = 3750;
         public const int SevenThousand = 7000;
         public const int TenThousand = 10000;
+        public static readonly double[] EasyHp   = {2000, 3750, 1500, 2500, 7000};
+        public static readonly double[] HardHp   = {1500, 3000, 1100, 2000, 10000};
+        public static readonly int[] EasyDMG     = {300, 250, 400, 120, 300};
+        public static readonly int[] HardDMG     = {200, 150, 300, 70, 400};
+        public static readonly int[] EasyDMGReduction = {35, 45, 35, 40, 20};
+        public static readonly int[] HardDMGReduction = {25, 35, 20, 25, 30};
     }
 }
