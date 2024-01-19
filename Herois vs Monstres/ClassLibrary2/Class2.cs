@@ -30,23 +30,23 @@ namespace Metodos
                 return Const.Two;
             }
         }
-        public static int CharacterNamesCheck(string[] names)
+        public static int ErrorTester(string[] names)
         {
             
-            if (names.Length != Const.Four)
+            if (names.Length != Const.Five)
             {
                 Console.WriteLine(Const.BlankLine);
                 Console.Write(Const.IntroduceNamesError.Substring(0, 16));
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(Const.IntroduceNamesError.Substring(16, 6));
+                Console.Write(Const.IntroduceNamesError.Substring(16, 4));
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(Const.IntroduceNamesError.Substring(22, 68));
+                Console.Write(Const.IntroduceNamesError.Substring(20, 81));
                 Console.WriteLine(Const.BlankLine);
                 return Const.One;
             }
             return Const.Zero;
         }
-        public static void TotalErrorsAchievedMessage(int errors)
+        public static void ErrorTester(int errors)
         {
             if (errors == Const.Three)
             {

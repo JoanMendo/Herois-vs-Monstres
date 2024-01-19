@@ -4,7 +4,7 @@
     {
         /* Definició de constants i variables*/
         public static readonly string[] StartingMessages = { StartingMsg, StartLeave, HowToPlay, HowToLeave };
-        public static readonly string[] Stats = { "la vida", "l'atac", "la reduccio d'atac"};
+        public static readonly string[] Stats = { "la vida", "l'atac", "la reduccio d'atac" };
         public const string StartingMsg = "Benvingut a Herois vs Monstres!";
         public const string StartLeave = "Que vols fer ?";
         public const string HowToPlay = "1. Jugar a aquesta obra maestra del gaming";
@@ -22,8 +22,8 @@
         public const string Custom = "4. Customitzat";
         public const string DificultyError = "Mira que bé, no saps ni posar un nombre de l'1 al 4,";
 
-        public const string IntroduceNames = "Introdueix els noms dels 4 personatges separats per comes, l´arquera, el bàrbar, la maga, i el druida";
-        public const string IntroduceNamesError = "Has d'introduir QUATRE noms separats per comes, l'arquera, el bàrbar, la maga, i el druida";
+        public const string IntroduceNames = "Introdueix els noms dels 4 personatges i del monstre separats per comes, l´arquera, el bàrbar, la maga, el druida, i el monstre. ";
+        public const string IntroduceNamesError = "Has d'introduir CINC noms separats per comes, l'arquera, el bàrbar, la maga, el druida, i el monstre.";
         public const string StartToCreate = "Primer toca definir las estadístiques dels personatges, dins del rang que s'especificarà dins de [] Si et surts del limit 3 cops, tornaras a l'inici de crear el personatge. Si això passa 3 cops, tornaras al menú.";
         public const string StartArcher = "El primer personatge és l'arquera.";
         public const string StartKnight = "El segon personatge és el cavaller.";
@@ -113,11 +113,7 @@
         public const int ThreeThousandSevenHundredFifty = 3750;
         public const int SevenThousand = 7000;
         public const int TenThousand = 10000;
-        public static readonly double[] EasyHp   = {2000, 3750, 1500, 2500, 7000};
-        public static readonly double[] HardHp   = {1500, 3000, 1100, 2000, 10000};
-        public static readonly int[] EasyDMG     = {300, 250, 400, 120, 300};
-        public static readonly int[] HardDMG     = {200, 150, 300, 70, 400};
-        public static readonly int[] EasyDMGReduction = {35, 45, 35, 40, 20};
-        public static readonly int[] HardDMGReduction = {25, 35, 20, 25, 30};
+        public static readonly double[,] EasyStats = { { 2000, 3750, 1500, 2500, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+        public static readonly double[,] HardStats = { { 1500, 3000, 1100, 2000, 10000 }, { 200, 150, 300, 70, 400 }, { 25, 35, 20, 25, 30 } };
     }
 }

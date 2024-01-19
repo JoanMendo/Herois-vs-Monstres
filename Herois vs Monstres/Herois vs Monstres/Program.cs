@@ -16,9 +16,7 @@ namespace PR1
             int initialAnswer = Const.Zero;
             int stayOrLeave = Const.Zero;
             int difficulty = Const.Zero;
-            double[] HP = new double[5];
-            int[] DMG = new int[5]; 
-            int [] DMGReduction = new int[5];
+            double[,] stats = new double[3,5];
             string names;
             string[] namesArray;
 
@@ -38,7 +36,7 @@ namespace PR1
                     errors++;
             } while (errors != Const.Three && (stayOrLeave != Const.Zero && stayOrLeave != Const.One));
 
-            Class2.TotalErrorsAchievedMessage(errors);
+            Class2.ErrorTester(errors);
 
             if (stayOrLeave == Const.One)
             {
@@ -56,14 +54,15 @@ namespace PR1
                         namesArray[i] = namesArray[i].Trim();
                         namesArray[i] = char.ToUpper(namesArray[i][Const.Zero]) + namesArray[i].Substring(Const.One);
                     }
-                    errors += Class2.CharacterNamesCheck(namesArray);
+                    errors += Class2.ErrorTester(namesArray);
 
-                } while (errors != Const.Three && namesArray.Length != Const.Four);
+                } while (errors != Const.Three && namesArray.Length != Const.Five);
 
-                Class2.TotalErrorsAchievedMessage(errors);
+                Class2.ErrorTester(errors);
 
-                if (namesArray.Length == Const.Four)
+                if (namesArray.Length == Const.Five)
                 {
+                    
                     for (int i = Const.Zero; i < namesArray.Length; i++)
                     {
                         Console.WriteLine(Const.BlankLine);
@@ -71,26 +70,27 @@ namespace PR1
                     }
                     do
                     {
+                        
                         difficulty = Convert.ToInt32(Console.ReadLine());
                         switch (difficulty)
                         {
                             case 1:
-                                HP = Const.EasyHp;
-                                DMG = Const.EasyDMG;
-                                DMGReduction = Const.EasyDMGReduction;
+                                stats = Const.EasyStats;
                                 break;
                             case 2:
-                                HP = Const.HardHp;
-                                DMG = Const.HardDMG;
-                                DMGReduction = Const.HardDMGReduction;
+                                stats = Const.HardStats;
                                 break;
                             case 3:
+                                Random random = new Random();
                                 for (int i = Const.Zero; i < Const.Five; i++)
                                 {
-                                    Random random = new Random();
-                                    HP[i] = random.NextDouble() * (Const.HardHp[i] - Const.EasyHp[i]) + Const.EasyHp[i];
-                                    DMG[i] = random.Next(Const.EasyDMG[i], Const.HardDMG[i]);
-                                    DMGReduction[i] = random.Next(Const.EasyDMGReduction[i], Const.HardDMGReduction[i]);
+                                    for (int j = Const.One; j < Const.Three; j++)
+                                    {
+                                        if (Const.EasyStats[j,i] > Const.HardStats[j,i])
+                                        stats[j, i] = random.NextDouble() * (Const.EasyStats[j,i] - Const.HardStats[j,i]) + Const.HardStats[j, i];
+                                        else
+                                        stats[j, i] = random.NextDouble() * (Const.HardStats[j, i] - Const.EasyStats[j, i]) + Const.EasyStats[j, i];
+                                    }        
                                 }
                                 break;
                             case 4:
@@ -98,7 +98,16 @@ namespace PR1
                                 {
                                     for (int j = 0; j < 5; j++)
                                     {
-                                        Console.WriteLine($"Introdueix {Const.Stats[j]} de {namesArray[j]} ({Const.EasyHp[j]} - {Const.HardHp[j]})");
+                                        errors = 0;
+                                        while (errors != 3) 
+                                        {
+                                            if (Const.EasyStats[i, j] > Const.HardStats[i, j])
+                                                Console.WriteLine($"Introdueix {Const.Stats[i]} de {namesArray[j]} ({Const.HardStats[i, j]} - {Const.EasyStats[i, j]})");
+                                            else
+                                                Console.WriteLine($"Introdueix {Const.Stats[i]} de {namesArray[j]} ({Const.EasyStats[i, j]} - {Const.HardStats[i, j]})");
+                                            stats[i, j] = Convert.ToDouble(Console.ReadLine());
+                                        }
+                                        
                                         
                                     }
                                 }
