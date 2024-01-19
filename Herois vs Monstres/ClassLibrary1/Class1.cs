@@ -22,16 +22,10 @@
         public const string Custom = "4. Customitzat";
         public const string DificultyError = "Mira que bé, no saps ni posar un nombre de l'1 al 4,";
 
-        public const string IntroduceNames = "Introdueix els noms dels 4 personatges i del monstre separats per comes, l´arquera, el bàrbar, la maga, el druida, i el monstre. ";
+        public const string IntroduceNames = "Introdueix els noms dels 4 personatges (l´arquera, el bàrbar, la maga, el druida) i del monstre separats per comes. ";
         public const string IntroduceNamesError = "Has d'introduir CINC noms separats per comes, l'arquera, el bàrbar, la maga, el druida, i el monstre.";
-        public const string StartToCreate = "Primer toca definir las estadístiques dels personatges, dins del rang que s'especificarà dins de [] Si et surts del limit 3 cops, tornaras a l'inici de crear el personatge. Si això passa 3 cops, tornaras al menú.";
-        public const string StartArcher = "El primer personatge és l'arquera.";
-        public const string StartKnight = "El segon personatge és el cavaller.";
-        public const string StartSorcerer = "El tercer personatge és la maga.";
-        public const string StartDruid = "El quart personatge és el druida.";
-        public const string StartMonster = "Finalment, el monstre.";
         public const string ErrorInValue = "Has d'introduir un nombre que estigui dins de l'interval especificat.";
-        public const string RetryValueInsertion = "Torna a introduir les dades d'aquest personatge.";
+        public const string RandomValueInsertion = "Veig que et costa, passem al següent atribut";
 
         public const string ArcherHP = "Introdueix la vida que tindrà l'arquera [1500-2000]";
         public const string KnightHP = "Introdueix la vida que tindrà el cavaller [3000-3750]";

@@ -1,4 +1,5 @@
 ﻿using Constants;
+using System.Reflection.Metadata.Ecma335;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Metodos
@@ -55,5 +56,32 @@ namespace Metodos
             }
 
         }
+        public static int ErrorTester(double[,] stats ,int i, int j)
+        {
+            if (Const.EasyStats[i, j] > Const.HardStats[i, j])
+            {
+                if (stats[i, j] > Const.HardStats[i, j] && stats[i, j] < Const.EasyStats[i, j])
+                {
+                    return 0;
+                }
+                Console.WriteLine(Const.BlankLine);
+                Console.WriteLine(Const.ErrorInValue);
+                Console.WriteLine(Const.BlankLine);
+                return 1;
+            }
+           else
+            {
+                if (stats[i, j] < Const.HardStats[i, j] && stats[i, j] > Const.EasyStats[i, j])
+                {
+                    return 0;
+                }
+                Console.WriteLine(Const.BlankLine);
+                Console.WriteLine(Const.ErrorInValue);
+                Console.WriteLine(Const.BlankLine);
+                return 1;
+            }
+            
+        }
+        
     }
 }
