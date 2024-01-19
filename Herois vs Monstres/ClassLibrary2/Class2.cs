@@ -47,15 +47,7 @@ namespace Metodos
             }
             return Const.Zero;
         }
-        public static void ErrorTester(int errors)
-        {
-            if (errors == Const.Three)
-            {
-                Console.WriteLine(Const.MenuErrorLeave);
-
-            }
-
-        }
+       
         public static bool ErrorTester(double[,] stats ,int i, int j)
         {
             if (Const.EasyStats[i, j] > Const.HardStats[i, j])
@@ -64,7 +56,7 @@ namespace Metodos
                 {
                     return false;
                 }
-                
+
                 return true;
             }
            else

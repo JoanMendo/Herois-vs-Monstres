@@ -53,5 +53,111 @@ namespace TestProject1
             Assert.AreEqual(Const.Two, result);
         }
 
+        [TestMethod]
+        public void TestNamesErrorTester1()
+        {
+            string[] names = {};
+
+            // Act
+            int result = Class2.ErrorTester(names);
+
+            // Assert
+            Assert.AreEqual(Const.One, result);
+        }
+
+        [TestMethod]
+        public void TestNamesErrorTester2()
+        {
+            string[] names = {"a","afeasfesa","affafef","fwreerrwqe"};
+
+            // Act
+            int result = Class2.ErrorTester(names);
+
+            // Assert
+            Assert.AreEqual(Const.One, result);
+        }
+
+        [TestMethod]
+        public void TestNamesErrorTester3()
+        {
+            string[] names = { "a", "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf", "f8wfj98wf" };
+
+            // Act
+            int result = Class2.ErrorTester(names);
+
+            // Assert
+            Assert.AreEqual(Const.One, result);
+        }
+
+        [TestMethod]
+        public void TestNamesErrorTester4()
+        {
+            string[] names = {"afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf", "f8wfj98wf" };
+
+            // Act
+            int result = Class2.ErrorTester(names);
+
+            // Assert
+            Assert.AreEqual(Const.Zero, result);
+        }
+
+        [TestMethod]
+        public void TestStatErrorTester1()
+        {
+            int i = 0, j = 0;
+            double[,] doubles = new double[3,5];
+            doubles[i, j] = 1500;
+
+            // Act
+            bool result = Class2.ErrorTester(doubles, i, j);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void TestStatErrorTester2()
+        {
+            int i = 0, j = 0;
+            double[,] doubles = new double[3, 5];
+            doubles[i, j] = 2000;
+
+            // Act
+            bool result = Class2.ErrorTester(doubles, i, j);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void TestStatErrorTester3()
+        {
+            int i = 0, j = 0;
+            double[,] doubles = new double[3, 5];
+            doubles[i, j] = 1499;
+
+            // Act
+            bool result = Class2.ErrorTester(doubles, i, j);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void TestStatErrorTester4()
+        {
+            int i = 0, j = 0;
+            double[,] doubles = new double[3, 5];
+            doubles[i, j] = 2001;
+
+            // Act
+            bool result = Class2.ErrorTester(doubles, i, j);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+
+
     }
 }

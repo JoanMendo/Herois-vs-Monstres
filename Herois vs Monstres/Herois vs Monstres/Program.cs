@@ -32,7 +32,11 @@ namespace PR1
                     errors++;
             } while (errors != Const.Three && (stayOrLeave != Const.Zero && stayOrLeave != Const.One));
 
-            Class2.ErrorTester(errors);
+            if (errors == Const.Three)
+            {
+                Console.WriteLine(Const.MenuErrorLeave);
+
+            }
 
             if (stayOrLeave == Const.One)
             {
@@ -53,7 +57,11 @@ namespace PR1
 
                 } while (errors != Const.Three && namesArray.Length != Const.Five);
 
-                Class2.ErrorTester(errors);
+                if (errors == Const.Three)
+                {
+                    Console.WriteLine(Const.MenuErrorLeave);
+
+                }
 
                 if (namesArray.Length == Const.Five)
                 {
@@ -80,8 +88,11 @@ namespace PR1
                                     {
                                         if (Const.EasyStats[j, i] > Const.HardStats[j, i])
                                             stats[j, i] = random.NextDouble() * (Const.EasyStats[j, i] - Const.HardStats[j, i]) + Const.HardStats[j, i];
+                                        
                                         else
                                             stats[j, i] = random.NextDouble() * (Const.HardStats[j, i] - Const.EasyStats[j, i]) + Const.EasyStats[j, i];
+
+                                        stats[j, i] = Math.Round(stats[j, i], 2);
                                     }
                                 }
                                 break;
@@ -133,7 +144,11 @@ namespace PR1
                         
                     } while (errors != Const.Three && (difficulty < Const.Zero || difficulty > Const.Four));
                 }
-                Class2.ErrorTester(errors);
+                if (errors == Const.Three)
+                {
+                    Console.WriteLine(Const.MenuErrorLeave);
+
+                }
             }
 
         }
