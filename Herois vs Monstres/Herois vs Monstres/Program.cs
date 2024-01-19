@@ -37,7 +37,6 @@ namespace PR1
             if (stayOrLeave == Const.One)
             {
                 Console.WriteLine(Const.IntroduceNames);
-
                 do
                 {
 
@@ -58,7 +57,6 @@ namespace PR1
 
                 if (namesArray.Length == Const.Five)
                 {
-
                     for (int i = Const.Zero; i < namesArray.Length; i++)
                     {
                         Console.WriteLine(Const.BlankLine);
@@ -66,7 +64,6 @@ namespace PR1
                     }
                     do
                     {
-
                         difficulty = Convert.ToInt32(Console.ReadLine());
                         switch (difficulty)
                         {
@@ -77,7 +74,6 @@ namespace PR1
                                 stats = Const.HardStats;
                                 break;
                             case Const.Three:
-
                                 for (int i = Const.Zero; i < Const.Five; i++)
                                 {
                                     for (int j = Const.One; j < Const.Three; j++)
@@ -102,15 +98,13 @@ namespace PR1
                                                 Console.WriteLine(Const.BlankLine);
                                                 Console.WriteLine($"Introdueix {Const.Stats[i]} de {namesArray[j]} ({Const.HardStats[i, j]} - {Const.EasyStats[i, j]})");
                                                 Console.WriteLine(Const.BlankLine);
-                                            }
-                                                 
+                                            }                                              
                                             else
                                             {
                                                 Console.WriteLine(Const.BlankLine);
                                                 Console.WriteLine($"Introdueix {Const.Stats[i]} de {namesArray[j]} ({Const.EasyStats[i, j]} - {Const.HardStats[i, j]})");
                                                 Console.WriteLine(Const.BlankLine);
                                             }
-
                                             stats[i, j] = Convert.ToDouble(Console.ReadLine());
                                             if (Class2.ErrorTester(stats, i, j) == true)
                                             {
@@ -124,10 +118,9 @@ namespace PR1
                                                 Console.WriteLine(Const.RandomValueInsertion);
                                                 Console.WriteLine(Const.BlankLine);
                                                 if (Const.EasyStats[i, j] > Const.HardStats[i, j])
-                                                    stats[i, j] = random.NextDouble() * (Const.EasyStats[i, j] - Const.HardStats[i, j]) + Const.HardStats[i, j];
-
+                                                    stats[i, j] = Const.HardStats[i, j];
                                                 else
-                                                    stats[i, j] = random.NextDouble() * (Const.HardStats[i, j] - Const.EasyStats[i, j]) + Const.EasyStats[i, j];
+                                                    stats[i, j] =  Const.EasyStats[i, j];
                                             }
                                         } while (errors != Const.Three && Class2.ErrorTester(stats, i, j) == true);
                                     }
@@ -137,7 +130,7 @@ namespace PR1
                                 errors++;
                                 break;
                         }
-                        Console.ReadKey();
+                        
                     } while (errors != Const.Three && (difficulty < Const.Zero || difficulty > Const.Four));
                 }
                 Class2.ErrorTester(errors);

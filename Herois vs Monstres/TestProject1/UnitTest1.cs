@@ -8,7 +8,7 @@ namespace TestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestStartingMenu1()
         {
             int startGame = Const.Zero;
 
@@ -19,7 +19,7 @@ namespace TestProject1
             Assert.AreEqual(Const.Zero, result);
         }
         [TestMethod]
-        public void TestMethod2()
+        public void TestStartingMenu2()
         {
             int startGame = Const.One;
 
@@ -30,9 +30,21 @@ namespace TestProject1
             Assert.AreEqual(Const.One, result);
         }
         [TestMethod]
-        public void TestMethod3()
+        public void TestStartingMenu3()
         {
             int startGame = Const.Two;
+
+            // Act
+            int result = Class2.StartingMenu(startGame);
+
+            // Assert
+            Assert.AreEqual(Const.Two, result);
+        }
+
+        [TestMethod]
+        public void TestStartingMenu4()
+        {
+            int startGame = -1;
 
             // Act
             int result = Class2.StartingMenu(startGame);
