@@ -1,9 +1,10 @@
 ﻿namespace Constants
 {
-    public class Text
+    public class Const
     {
-        /* Definició de constants i variables*/
+        /*Definició de constants i variables*/
         public static readonly string[] StartingMessages = { StartingMsg, StartLeave, HowToPlay, HowToLeave };
+        public static readonly string[] Stats = { "la vida", "l'atac", "la reduccio d'atac" };
         public const string StartingMsg = "Benvingut a Herois vs Monstres!";
         public const string StartLeave = "Que vols fer ?";
         public const string HowToPlay = "1. Jugar a aquesta obra maestra del gaming";
@@ -13,32 +14,19 @@
         public const string MenuErrorLeave = "Bueno, si no etc capaç ni de començar a jugar, no continuis.";
         public const string LeaveConfirmed = "Bueno, donç moltes gràcies per apofitar d'aquesta manera les hores que he invertit creant això. Que tinguis un mal dia.";
 
-        public const string StartToCreate = "Primer toca definir las estadístiques dels personatges, dins del rang que s'especificarà dins de [] Si et surts del limit 3 cops, tornaras a l'inici de crear el personatge. Si això passa 3 cops, tornaras al menú.";
-        public const string StartArcher = "El primer personatge és l'arquera.";
-        public const string StartKnight = "El segon personatge és el cavaller.";
-        public const string StartSorcerer = "El tercer personatge és la maga.";
-        public const string StartDruid = "El quart personatge és el druida.";
-        public const string StartMonster = "Finalment, el monstre.";
+        public static readonly string[] DificultyMessages = { Dificulty, Easy, Medium, Hard, Custom };
+        public const string Dificulty = "Selecciona la dificultat del joc";
+        public const string Easy = "1. Fàcil";
+        public const string Medium = "2. Difìcil";
+        public const string Hard = "3. Random";
+        public const string Custom = "4. Customitzat";
+        public const string DificultyError = "Mira que bé, no saps ni posar un nombre de l'1 al 4,";
+
+        public const string IntroduceNames = "Introdueix els noms dels 5 personatges (l´arquera, el bàrbar, la maga, el druida, i del monstre)  separats per comes. ";
+        public const string IntroduceNamesError = "Has d'introduir CINC noms separats per comes, l'arquera, el bàrbar, la maga, el druida, i el monstre.";
         public const string ErrorInValue = "Has d'introduir un nombre que estigui dins de l'interval especificat.";
-        public const string RetryValueInsertion = "Torna a introduir les dades d'aquest personatge.";
+        public const string RandomValueInsertion = "Veig que et costa, passem al següent atribut";
 
-        public const string ArcherHP = "Introdueix la vida que tindrà l'arquera [1500-2000]";
-        public const string KnightHP = "Introdueix la vida que tindrà el cavaller [3000-3750]";
-        public const string SorcererHP = "Introdueix la vida que tindrà la maga [1000-1500]";
-        public const string DruidHP = "Introdueix la vida que tindrà el druida [2000-2500]";
-        public const string MonsterHP = "Introdueix la vida que tindrà el monstre [9000-12000]";
-
-        public const string ArcherDmg = "Introdueix l'atac que tindrà l'arquera [180-300]";
-        public const string KnightDmg = "Introdueix l'atac  que tindrà el cavaller [150-250]";
-        public const string SorcererDmg = "Introdueix l'atac que tindrà la maga [300-350]";
-        public const string DruidDmg = "Introdueix l'atac que tindrà el druida [70-120]";
-        public const string MonsterDmg = "Introdueix l'atac que tindrà el monstre [250-400]";
-
-        public const string ArcherDmgReduction = "Introdueix la reducció de dany que tindrà l'arquera [25-40]%";
-        public const string KnightDmgReduction = "Introdueix la reducció de dany que tindrà el cavaller [35-45]%";
-        public const string SorcererDmgReduction = "Introdueix la reducció de dany que tindrà la maga [20-35]%";
-        public const string DruidDmgReduction = "Introdueix la reducció de dany que tindrà el druida [25-40]%";
-        public const string MonsterDmgReduction = "Introdueix la reducció de dany que tindrà el monstre [20-30]%";
 
         public const string BattleStart = "Comença la batalla conta el monstre. Recorda que les habilitats dels personatges tenen un cooldown de 5 torns, i que fer 3 errors al seleccionar l'ació d'un personatge et retornarà al menú. ";
         public const string ArcherTurn = "És el torn de l'arquera";
@@ -70,37 +58,39 @@
 
         public const string BlankLine = " ";
 
-    }
-    public class Nums 
-    {
         public const int Zero = 0;
         public const int One = 1;
         public const int Two = 2;
         public const int Three = 3;
+        public const int Four = 4;
         public const int Five = 5;
         public const int Twenty = 20;
+        public const int TwentyFive = 25;
         public const int Thirty = 30;
+        public const int ThirtyFive = 35;
+        public const int Forty = 40;
+        public const int FortyFive = 45;
         public const int Seventy = 70;
         public const int OneHundred = 100;
         public const int OneHundredAndTwenty = 120;
+        public const int OneHundredAndFifty = 150;
+        public const int OneHundredAndEighty = 180;
+        public const int TwoHundred = 200;
+        public const int TwoHundredAndFifty = 250;
+        public const int ThreeHundred = 300;
+        public const int ThreeHundredAndFifty = 350;
+        public const int FourHundred = 400;
         public const int FiveHundred = 500;
+        public const int OneThousand = 1000;
+        public const int OneThousandOneHundred = 1100;
         public const int OneThousandFiveHundred = 1500;
         public const int TwoThousand = 2000;
         public const int TwoThousandAndFiveHundred = 2500;
-        public const int OneHundredAndEighty = 180;
-        public const int ThreeHundred = 300;
-        public const int TwentyFive = 25;
-        public const int Forty = 40;
         public const int ThreeThousand = 3000;
-        public const int ThreeThousandSevenHundredSeventyFive = 3750;
-        public const int OneHundredAndFifty = 150;
-        public const int TwoHundredAndFifty = 250;
-        public const int FourHundred = 400;
-        public const int ThirtyFive = 35;
-        public const int FortyFive = 45;
-        public const int OneThousand = 1000;
-        public const int ThreeHundredAndFifty = 350;
-        public const int NineThousand = 9000;
-        public const int TwelveThousand = 12000;
-    } 
+        public const int ThreeThousandSevenHundredFifty = 3750;
+        public const int SevenThousand = 7000;
+        public const int TenThousand = 10000;
+        public static readonly double[,] EasyStats = { { 2000, 3750, 1500, 2500, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+        public static readonly double[,] HardStats = { { 1500, 3000, 1100, 2000, 10000 }, { 200, 150, 300, 70, 400 }, { 25, 35, 20, 25, 30 } };
+    }
 }

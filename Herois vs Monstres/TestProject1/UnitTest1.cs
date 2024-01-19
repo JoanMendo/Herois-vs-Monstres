@@ -10,35 +10,35 @@ namespace TestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            int startGame = Nums.Zero;
+            int startGame = Const.Zero;
 
             // Act
             int result = Class2.StartingMenu(startGame);
 
             // Assert
-            Assert.AreEqual(Nums.Zero, result);
+            Assert.AreEqual(Const.Zero, result);
         }
         [TestMethod]
         public void TestMethod2()
         {
-            int startGame = Nums.One;
+            int startGame = Const.One;
 
             // Act
             int result = Class2.StartingMenu(startGame);
 
             // Assert
-            Assert.AreEqual(Nums.One, result);
+            Assert.AreEqual(Const.One, result);
         }
         [TestMethod]
         public void TestMethod3()
         {
-            int startGame = Nums.Two;
+            int startGame = Const.Two;
 
             // Act
             int result = Class2.StartingMenu(startGame);
 
             // Assert
-            Assert.AreEqual(Nums.Two, result);
+            Assert.AreEqual(Const.Two, result);
         }
 
     }
