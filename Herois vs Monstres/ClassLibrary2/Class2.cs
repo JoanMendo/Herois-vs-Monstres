@@ -56,29 +56,24 @@ namespace Metodos
             }
 
         }
-        public static int ErrorTester(double[,] stats ,int i, int j)
+        public static bool ErrorTester(double[,] stats ,int i, int j)
         {
             if (Const.EasyStats[i, j] > Const.HardStats[i, j])
             {
-                if (stats[i, j] > Const.HardStats[i, j] && stats[i, j] < Const.EasyStats[i, j])
+                if (stats[i, j] >= Const.HardStats[i, j] && stats[i, j] <= Const.EasyStats[i, j])
                 {
-                    return 0;
+                    return false;
                 }
-                Console.WriteLine(Const.BlankLine);
-                Console.WriteLine(Const.ErrorInValue);
-                Console.WriteLine(Const.BlankLine);
-                return 1;
+                
+                return true;
             }
            else
             {
-                if (stats[i, j] < Const.HardStats[i, j] && stats[i, j] > Const.EasyStats[i, j])
+                if (stats[i, j] <= Const.HardStats[i, j] && stats[i, j] >= Const.EasyStats[i, j])
                 {
-                    return 0;
+                    return false;
                 }
-                Console.WriteLine(Const.BlankLine);
-                Console.WriteLine(Const.ErrorInValue);
-                Console.WriteLine(Const.BlankLine);
-                return 1;
+                return true;
             }
             
         }

@@ -70,13 +70,13 @@ namespace PR1
                         difficulty = Convert.ToInt32(Console.ReadLine());
                         switch (difficulty)
                         {
-                            case 1:
+                            case Const.One:
                                 stats = Const.EasyStats;
                                 break;
-                            case 2:
+                            case Const.Two:
                                 stats = Const.HardStats;
                                 break;
-                            case 3:
+                            case Const.Three:
 
                                 for (int i = Const.Zero; i < Const.Five; i++)
                                 {
@@ -89,36 +89,49 @@ namespace PR1
                                     }
                                 }
                                 break;
-                            case 4:
-                                for (int i = 0; i < Const.Three; i++)
+                            case Const.Four:
+                                for (int i = Const.Zero; i < Const.Three; i++)
                                 {
-                                    for (int j = 0; j < 5; j++)
+                                    for (int j = Const.Zero; j < Const.Five; j++)
                                     {
-                                        errors = 0;
-                                        while (errors != 3)
+                                        errors = Const.Zero;
+                                        do
                                         {
                                             if (Const.EasyStats[i, j] > Const.HardStats[i, j])
+                                            {
+                                                Console.WriteLine(Const.BlankLine);
                                                 Console.WriteLine($"Introdueix {Const.Stats[i]} de {namesArray[j]} ({Const.HardStats[i, j]} - {Const.EasyStats[i, j]})");
+                                                Console.WriteLine(Const.BlankLine);
+                                            }
+                                                 
                                             else
+                                            {
+                                                Console.WriteLine(Const.BlankLine);
                                                 Console.WriteLine($"Introdueix {Const.Stats[i]} de {namesArray[j]} ({Const.EasyStats[i, j]} - {Const.HardStats[i, j]})");
+                                                Console.WriteLine(Const.BlankLine);
+                                            }
+
                                             stats[i, j] = Convert.ToDouble(Console.ReadLine());
-                                            errors += Class2.ErrorTester(stats, i, j);
-                                            if (errors == 3)
+                                            if (Class2.ErrorTester(stats, i, j) == true)
+                                            {
+                                                
+                                                Console.WriteLine(Const.ErrorInValue);
+                                                Console.WriteLine(Const.BlankLine);
+                                                errors++;                                            }
+                                            if (errors == Const.Three)
                                             {
                                                 Console.WriteLine(Const.BlankLine);
                                                 Console.WriteLine(Const.RandomValueInsertion);
                                                 Console.WriteLine(Const.BlankLine);
                                                 if (Const.EasyStats[i, j] > Const.HardStats[i, j])
                                                     stats[i, j] = random.NextDouble() * (Const.EasyStats[i, j] - Const.HardStats[i, j]) + Const.HardStats[i, j];
+
                                                 else
                                                     stats[i, j] = random.NextDouble() * (Const.HardStats[i, j] - Const.EasyStats[i, j]) + Const.EasyStats[i, j];
                                             }
-
-                                        }
-
+                                        } while (errors != Const.Three && Class2.ErrorTester(stats, i, j) == true);
                                     }
                                 }
-
                                 break;
                             default:
                                 errors++;

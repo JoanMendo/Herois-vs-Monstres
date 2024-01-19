@@ -22,28 +22,11 @@
         public const string Custom = "4. Customitzat";
         public const string DificultyError = "Mira que bé, no saps ni posar un nombre de l'1 al 4,";
 
-        public const string IntroduceNames = "Introdueix els noms dels 4 personatges (l´arquera, el bàrbar, la maga, el druida) i del monstre separats per comes. ";
+        public const string IntroduceNames = "Introdueix els noms dels 5 personatges (l´arquera, el bàrbar, la maga, el druida, i del monstre)  separats per comes. ";
         public const string IntroduceNamesError = "Has d'introduir CINC noms separats per comes, l'arquera, el bàrbar, la maga, el druida, i el monstre.";
         public const string ErrorInValue = "Has d'introduir un nombre que estigui dins de l'interval especificat.";
         public const string RandomValueInsertion = "Veig que et costa, passem al següent atribut";
 
-        public const string ArcherHP = "Introdueix la vida que tindrà l'arquera [1500-2000]";
-        public const string KnightHP = "Introdueix la vida que tindrà el cavaller [3000-3750]";
-        public const string SorcererHP = "Introdueix la vida que tindrà la maga [1000-1500]";
-        public const string DruidHP = "Introdueix la vida que tindrà el druida [2000-2500]";
-        public const string MonsterHP = "Introdueix la vida que tindrà el monstre [9000-12000]";
-
-        public const string ArcherDmg = "Introdueix l'atac que tindrà l'arquera [180-300]";
-        public const string KnightDmg = "Introdueix l'atac  que tindrà el cavaller [150-250]";
-        public const string SorcererDmg = "Introdueix l'atac que tindrà la maga [300-350]";
-        public const string DruidDmg = "Introdueix l'atac que tindrà el druida [70-120]";
-        public const string MonsterDmg = "Introdueix l'atac que tindrà el monstre [250-400]";
-
-        public const string ArcherDmgReduction = "Introdueix la reducció de dany que tindrà l'arquera [25-40]%";
-        public const string KnightDmgReduction = "Introdueix la reducció de dany que tindrà el cavaller [35-45]%";
-        public const string SorcererDmgReduction = "Introdueix la reducció de dany que tindrà la maga [20-35]%";
-        public const string DruidDmgReduction = "Introdueix la reducció de dany que tindrà el druida [25-40]%";
-        public const string MonsterDmgReduction = "Introdueix la reducció de dany que tindrà el monstre [20-30]%";
 
         public const string BattleStart = "Comença la batalla conta el monstre. Recorda que les habilitats dels personatges tenen un cooldown de 5 torns, i que fer 3 errors al seleccionar l'ació d'un personatge et retornarà al menú. ";
         public const string ArcherTurn = "És el torn de l'arquera";
