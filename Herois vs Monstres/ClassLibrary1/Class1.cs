@@ -2,7 +2,7 @@
 {
     public class Const
     {
-        /* Definició de constants i variables*/
+        /*Definició de constants i variables*/
         public static readonly string[] StartingMessages = { StartingMsg, StartLeave, HowToPlay, HowToLeave };
         public static readonly string[] Stats = { "la vida", "l'atac", "la reduccio d'atac" };
         public const string StartingMsg = "Benvingut a Herois vs Monstres!";
