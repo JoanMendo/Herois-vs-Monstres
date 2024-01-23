@@ -210,5 +210,77 @@ namespace TestProject1
 
 
         }
+       
+
+             [TestMethod]
+        public void TestCharactersAliveTester1()
+        {
+            int i = 3;
+            string[] namesArray = { "a", "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf" };
+            double[,] EasyStats = { { 2000, 3750, 1500, 2500, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+
+
+            // Act
+            bool result = Class2.CharactersAliveTester(i, namesArray, EasyStats);
+
+            // Assert
+            Assert.AreEqual(true, result);
+
+
+
+        }
+        [TestMethod]
+        public void TestCharactersAliveTester2()
+        {
+            int i = 3;
+            string[] namesArray = { "a", "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf" };
+            double[,] EasyStats = { { 2000, 3750, 1500, -10, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+
+
+            // Act
+            bool result = Class2.CharactersAliveTester(i, namesArray, EasyStats);
+
+            // Assert
+            Assert.AreEqual(false, result);
+
+
+
+        }
+
+        [TestMethod]
+
+        public void TestDruidHealing1()
+        {
+
+            double[,] stats = { { 1500, 3250, 1000, 2000, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+            string[] names = { "a", "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf" };
+
+            double[,] result = Class2.DruidHealing(stats, names);
+
+            Assert.AreEqual(Const.EasyStats, result);
+        }
+
+        [TestMethod]
+        public void TestDruidHealing2()
+        {
+
+            double[,] stats = { { 1800, 3650, 1400, 2400, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+            string[] names = { "a", "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf" };
+
+            double[,] result = Class2.DruidHealing(stats, names);
+
+            Assert.AreEqual(Const.EasyStats, result);
+        }
+        [TestMethod]
+        public void TestDruidHealing3()
+        {
+
+            double[,] stats = { { 100, 300, 100, 200, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
+            string[] names = { "a", "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf" };
+
+            double[,] result = Class2.DruidHealing(stats, names);
+
+            Assert.AreNotEqual(Const.EasyStats, result);
+        }
     }
 }

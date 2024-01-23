@@ -28,6 +28,9 @@
         public const string ErrorInValue = "Has d'introduir un nombre que estigui dins de l'interval especificat.";
         public const string RandomValueInsertion = "Veig que et costa, passem al següent atribut";
 
+        public const string ActionError = "Tens 3 accions a fer, no es difícil";
+        public static string NoTurn = "Et quedas sense torn per inútil.";
+        public static string FailedAttack = "El teu personatge és inutil i ha fallat l'atac";
 
         public const string BattleStart = "Comença la batalla conta el monstre. Recorda que les habilitats dels personatges tenen un cooldown de 5 torns, i que fer 3 errors al seleccionar l'acció d'un personatge saltarà el seu torn. ";
         public const string Attack = "1. Atacar al monstre";
@@ -37,7 +40,8 @@
         public const string HeroesDefeated = "Tots els teus herois han mort, ets dolentisim";
         public const string ArcherStun = "L'arquera a stunejat al monstre durant 2 turns";
         public const string HabilityOnCooldown = "Aquesta habilitat està en cooldown";
-        public const string MonsterStuned = "El monstre està stunejat i no atacarà aquest torn";
+        public static string MonsterAttacks = "El monstre acaba d'atacar";
+        public const string MonsterStuned = "El monstre està stuneat i no atacarà aquest torn";
         public const string KnightHability = "El cavaller es protegeix, i serà invulnerable al dany durant tres torns";
         public const string KnightInvulnerable = "El cavaller no ha patit ningun mal aquest torn";
         public const string BlankLine = " ";
@@ -49,31 +53,9 @@
         public const int Four = 4;
         public const int Five = 5;
         public const int Twenty = 20;
-        public const int TwentyFive = 25;
-        public const int Thirty = 30;
-        public const int ThirtyFive = 35;
-        public const int Forty = 40;
-        public const int FortyFive = 45;
-        public const int Seventy = 70;
         public const int OneHundred = 100;
-        public const int OneHundredAndTwenty = 120;
-        public const int OneHundredAndFifty = 150;
-        public const int OneHundredAndEighty = 180;
-        public const int TwoHundred = 200;
-        public const int TwoHundredAndFifty = 250;
-        public const int ThreeHundred = 300;
-        public const int ThreeHundredAndFifty = 350;
-        public const int FourHundred = 400;
         public const int FiveHundred = 500;
-        public const int OneThousand = 1000;
-        public const int OneThousandOneHundred = 1100;
-        public const int OneThousandFiveHundred = 1500;
-        public const int TwoThousand = 2000;
-        public const int TwoThousandAndFiveHundred = 2500;
-        public const int ThreeThousand = 3000;
-        public const int ThreeThousandSevenHundredFifty = 3750;
-        public const int SevenThousand = 7000;
-        public const int TenThousand = 10000;
+
         public static readonly double[,] EasyStats = { { 2000, 3750, 1500, 2500, 7000 }, { 300, 250, 400, 120, 300 }, { 35, 45, 35, 40, 20 } };
         public static readonly double[,] HardStats = { { 1500, 3000, 1100, 2000, 10000 }, { 200, 150, 300, 70, 400 }, { 25, 35, 20, 25, 30 } };
     }

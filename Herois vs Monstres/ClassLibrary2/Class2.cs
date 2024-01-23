@@ -75,7 +75,7 @@ namespace Metodos
         {
             if (action < 1 || action > 3)
             {
-                Console.WriteLine("Tens 3 accions a fer, no es difícil");
+                Console.WriteLine(Const.ActionError);
                 return false;
             }
             return true;
@@ -163,7 +163,7 @@ namespace Metodos
         }
         public static double[,] DruidHealing(double[,] stats, string [] names)
         {
-            for (int i = 0; i < stats.GetLength(0)-1; i++)
+            for (int i = 0; i < Const.Four; i++)
             {
                 if (stats[0,i] > 0)
                 {

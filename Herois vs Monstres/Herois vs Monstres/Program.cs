@@ -25,13 +25,13 @@ namespace PR1
             bool damageReducedDruid = false;
             bool[] DamagedReducedActive = { damageReducedArcher, damageReducedKnight, damageReducedMage, damageReducedDruid };
             double[,] stats = new double[3, 5];
-            double[] HPSorted = new double[4];
+            double[] HPSorted = new double[Const.Four];
             string names;
             int action;
             string[] namesArray;
             int round;
             Random random = new Random();
-            int[] randomTurns = {0,1,2,3};
+            int[] randomTurns = {Const.Zero,Const.One,Const.Two,Const.Three};
             bool characterAlive;
             bool monsterDead;
 
@@ -134,7 +134,7 @@ namespace PR1
                                             else
                                                 stats[j, i] = random.NextDouble() * (Const.HardStats[j, i] - Const.EasyStats[j, i]) + Const.EasyStats[j, i];
 
-                                            stats[j, i] = Math.Round(stats[j, i], 2);
+                                            stats[j, i] = Math.Round(stats[j, i], Const.Two);
                                         }
                                     }
                                     break;
@@ -205,21 +205,21 @@ namespace PR1
                             damageReducedKnight = false;
                             damageReducedMage = false;
                             damageReducedDruid = false;
-                            errors = 0;
+                            errors = Const.Zero;
                             round++;
                             Console.WriteLine($"Ronda {round}");
                             Console.WriteLine(Const.BlankLine);
                             random.Shuffle(randomTurns);
-                            for (int i = 0; i < randomTurns.Length; i++)
+                            for (int i = Const.Zero; i < randomTurns.Length; i++)
                             {
-                                if (HabilityCoolDowns[i] != 0)
+                                if (HabilityCoolDowns[i] != Const.Zero)
                                     HabilityCoolDowns[i]--;
                             }
-                            for (int i = 0; i < 4; i++)
+                            for (int i = Const.Zero; i < Const.Four; i++)
                             {
                                 if (errors == Const.Three)
                                 {
-                                    Console.WriteLine("Et quedas sense torn per inútil.");
+                                    Console.WriteLine(Const.NoTurn);
                                     Console.WriteLine(Const.BlankLine);
                                     errors = Const.Zero;
                                 }
@@ -234,78 +234,78 @@ namespace PR1
                                     {
                                         switch (action)
                                         {
-                                            case 1:
-                                                critOrDodge = random.Next(1, 20);
+                                            case Const.One:
+                                                critOrDodge = random.Next(Const.One, Const.Twenty);
                                             
 
 
-                                                if (critOrDodge == 2 || critOrDodge == 3)
+                                                if (critOrDodge == Const.Two || critOrDodge == Const.Three)
                                                 {
-                                                    stats[0, 4] = stats[0, 4] - (2*(stats[1, i] * (1 - (stats[2, 4] / 100))));
+                                                    stats[Const.Zero, Const.Four] = stats[Const.Zero, Const.Four] - (Const.Two*(stats[Const.One, i] * (Const.One - (stats[Const.Two, Const.Four] / Const.OneHundred))));
                                                 }
-                                                else if (critOrDodge != 1)
+                                                else if (critOrDodge != Const.One)
                                                 {
-                                                    stats[0, 4] = stats[0, 4] - (stats[1, i] * (1 - (stats[2, 4] / 100)));
+                                                    stats[Const.Zero, Const.Four] = stats[Const.Zero, Const.Four] - (stats[Const.One, i] * (Const.One - (stats[Const.Two, Const.Four] / Const.OneHundred)));
                                                 }
 
-                                                if (critOrDodge == 1)
+                                                if (critOrDodge == Const.One)
                                                 {
-                                                    Console.WriteLine("El teu personatge és inutil i ha fallat l'atac");
+                                                    Console.WriteLine(Const.FailedAttack);
                                                 } 
-                                                else if (stats[0, 4] <= 0)
+                                                else if (stats[Const.Zero, Const.Four] <= Const.Zero)
                                                 {
-                                                    Console.WriteLine($"{names[randomTurns[i]]} ha atacat al monstre {names[4]} i l'ha matat.");
+                                                    Console.WriteLine($"{names[randomTurns[i]]} ha atacat al monstre {names[Const.Four]} i l'ha matat.");
                                                     Console.WriteLine(Const.BlankLine);
                                                     monsterDead = true;
                                                 }
                                                 else
                                                 {
-                                                    Console.WriteLine($"{names[randomTurns[i]]} ha atacat al monstre {names[4]} i l'ha deixat a {stats[0, 4]} de vida.");
+                                                    Console.WriteLine($"{names[randomTurns[i]]} ha atacat al monstre {names[Const.Four]} i l'ha deixat a {stats[Const.Zero, Const.Four]} de vida.");
                                                     Console.Write(Const.BlankLine);
                                                 }
                                             
                                                 break;
 
-                                            case 2:
+                                            case Const.Two:
                                                 DamagedReducedActive[randomTurns[i]] = true;
                                                 Console.WriteLine($"{names[randomTurns[i]]} s'ha defensat i reduirà el dany rebut a la meitat en el següent atac.");
                                                 break;
 
-                                            case 3:
-                                                if (HabilityCoolDowns[randomTurns[i]] == 0)
+                                            case Const.Three:
+                                                if (HabilityCoolDowns[randomTurns[i]] == Const.Zero)
                                                 {
                                                     switch (randomTurns[i])
                                                     {
-                                                        case 0:
-                                                            monsterStuned = 2;
-                                                            archerHability = 5;
+                                                        case Const.Zero:
+                                                            monsterStuned = Const.Two;
+                                                            archerHability = Const.Five;
                                                             Console.WriteLine(Const.ArcherStun);
                                                             Console.Write(Const.BlankLine);
                                                             break;
-                                                        case 1:
-                                                            knightHability = 5;
-                                                            knightInvincible = 3;
+                                                        case Const.One:
+                                                            knightHability = Const.Five;
+                                                            knightInvincible = Const.Five;
                                                             Console.WriteLine(Const.KnightHability);
                                                             Console.WriteLine(Const.BlankLine);
                                                             break;
-                                                        case 2:
-                                                            stats[0, 4] = stats[0, 4] - (stats[1, 2] * 3 * (1-(stats[2, 4] / 100)));
-                                                            mageHability = 5;
-                                                            if (stats[0, 4] <= 0)
+                                                        case Const.Two:
+                                                            stats[Const.Zero, Const.Four] = stats[Const.Zero, Const.Four] - (stats[Const.One, Const.Two] * Const.Three * (Const.One-(stats[Const.Two, Const.Four] / Const.OneHundred)));
+                                                            mageHability = Const.Five;
+                                                            if (stats[Const.Zero, Const.Four] <= Const.Zero)
                                                             {
-                                                                Console.WriteLine($"{names[randomTurns[i]]} ha llançat una bola de foc al monstre {names[4]} i l'ha matat.");
+                                                                Console.WriteLine($"{names[randomTurns[i]]} ha llançat una bola de foc al monstre {names[Const.Four]} i l'ha matat.");
                                                                 Console.WriteLine(Const.BlankLine);
                                                                 monsterDead = true;
                                                             }
                                                             else
                                                             {
-                                                                Console.WriteLine($"{names[randomTurns[i]]} ha llançat una bola de foc al monstre {names[4]} i l'ha deixat a {stats[0, 4]} de vida.");
+                                                                Console.WriteLine($"{names[randomTurns[i]]} ha llançat una bola de foc al monstre {names[Const.Four]} i l'ha deixat a {stats[Const.Zero, Const.Four]} de vida.");
                                                                 Console.WriteLine(Const.BlankLine);
                                                             }
                                                             break;
-                                                        case 3:
+                                                        case Const.Three:
                                                             stats = Class2.DruidHealing(stats, namesArray);
-                                                            druidHability = 5;
+                                                            druidHability = Const.Five;
                                                             Console.WriteLine(Const.KnightHability);
                                                             Console.WriteLine(Const.BlankLine);
                                                             break;
@@ -328,39 +328,39 @@ namespace PR1
                                 }
                             
                             }
-                            if (monsterStuned != 0)
+                            if (monsterStuned != Const.Zero)
                             {
                                 monsterStuned--;
-                                Console.WriteLine("El monstre està stuneat i no atacarà");
+                                Console.WriteLine(Const.MonsterStuned);
                             }
                             else
                             {
-                                Console.WriteLine($"El monstre acaba d'atacar");
-                                for (int i = 0; i < 4; i++)
+                                Console.WriteLine(Const.MonsterAttacks);
+                                for (int i = Const.Zero; i < Const.Four; i++)
                                 {
-                                    if (randomTurns[i] == 1 && knightInvincible != 0)
+                                    if (randomTurns[i] == Const.One && knightInvincible != Const.Zero)
                                     {
                                         Console.WriteLine(Const.KnightInvulnerable);
                                     }
                                     else if (DamagedReducedActive[randomTurns[i]])
-                                    stats[0, i] = stats[0, i] - (stats[1, 4] * (1-(stats[2, i] / 100 * 2)));
+                                    stats[Const.Zero, i] = stats[Const.Zero, i] - (stats[Const.One, Const.Four] * (Const.One-(stats[Const.Two, i] / Const.OneHundred * Const.Two)));
                                
                                     else
-                                    stats[0, i] = stats[0, i] - (stats[1, 4] * (1-stats[2, i] / 100));
+                                    stats[Const.Zero, i] = stats[Const.Zero, i] - (stats[Const.One, Const.Four] * (Const.One-stats[Const.Two, i] / Const.OneHundred));
 
-                                    HPSorted[i] = stats[0, i];
+                                    HPSorted[i] = stats[Const.Zero, i];
                                 }
 
                             
                                 HPSorted = Class2.BubbleSortHP(HPSorted);
                             
 
-                                for (int i = 0; i < 4; i++)
+                                for (int i = Const.Zero; i < Const.Four; i++)
                                 {
-                                    if (stats[0, i] <= 0)
+                                    if (stats[Const.Zero, i] <= Const.Zero)
                                     {
                                         Console.WriteLine($"{names[randomTurns[i]]} esta al cementiri.");
-                                        stats[0, i] = 0;
+                                        stats[Const.Zero, i] = Const.Zero;
                                     }
                                     else
                                     {
