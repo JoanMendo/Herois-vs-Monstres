@@ -11,10 +11,21 @@ namespace PR1
             int initialAnswer = Const.Zero;
             int stayOrLeave = Const.Zero;
             int difficulty = Const.Zero;
+            int monsterStuned = Const.Zero;
+            int knightInvincible = Const.Zero;
+            int archerHability = Const.Zero;
+            int knightHability = Const.Zero;
+            int mageHability = Const.Zero;
+            int druidHability = Const.Zero;
+            int [] HabilityCoolDowns = {archerHability, knightHability, mageHability, druidHability};
             double[,] stats = new double[3, 5];
             string names;
+            int action = Const.Zero;
             string[] namesArray;
+            int round = 0;
             Random random = new Random();
+            int[] randomTurns = {0,1,2,3};
+            bool characterAlive = true;
 
 
 
@@ -62,8 +73,7 @@ namespace PR1
                     Console.WriteLine(Const.MenuErrorLeave);
 
                 }
-
-                if (namesArray.Length == Const.Five)
+                else
                 {
                     for (int i = Const.Zero; i < namesArray.Length; i++)
                     {
@@ -122,7 +132,8 @@ namespace PR1
                                                 
                                                 Console.WriteLine(Const.ErrorInValue);
                                                 Console.WriteLine(Const.BlankLine);
-                                                errors++;                                            }
+                                                errors++;                                            
+                                            }
                                             if (errors == Const.Three)
                                             {
                                                 Console.WriteLine(Const.BlankLine);
@@ -147,7 +158,63 @@ namespace PR1
                 if (errors == Const.Three)
                 {
                     Console.WriteLine(Const.MenuErrorLeave);
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    do
+                    {
+                        errors = 0;
+                        round++;
+                        Console.WriteLine($"Ronda {round}");
+                        random.Shuffle(randomTurns);
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (errors == Const.Three)
+                            {
+                                Console.WriteLine("Et quedas sense torn per inútil.");
+                                errors = Const.Zero;
+                            }
+                            if (errors != Const.Zero)
+                                i--;
+                            
+                            characterAlive = Class2.CharactersAliveTester(randomTurns[i], namesArray, stats);
+                            if (characterAlive == true)
+                            {
+                                action = Convert.ToInt32(Console.ReadLine());
+                                if (Class2.ErrorTester(action))
+                                {
+                                    switch (action)
+                                    {
+                                        case 1:
+                                            break;
 
+                                        case 2:
+                                            break;
+
+                                        case 3:
+                                            break;
+                                    }
+                                }
+                                else
+                                {
+                                    errors++;
+                                }
+                            }
+                            
+                        }
+                        if (monsterStuned != 0)
+                        {
+                            monsterStuned--;
+                            Console.WriteLine("El monstre està stuneat i no atacarà");
+                        }
+                        else
+                        {
+
+                        }
+                        
+                    } while (characterAlive == true);
+                    
                 }
             }
 

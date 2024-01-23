@@ -35,10 +35,6 @@
         public const string DruidTurn = "És el torn del druida";
         public const string Attack = "1. Atacar al monstre";
         public const string Defense = "2. Defensarse (Duplica la reducció de dany aquest torn)";
-        public const string DefenseArcher = "L'arquera es defensarà aquest torn.";
-        public const string DefenseKnight = "El cavaller es defensarà aquest torn";
-        public const string DefenseSorcerer = "La maga es defensarà aquesta ronda";
-        public const string DefenseDruid = "El druida es defensarà aquesta ronda";
         public const string HabilityArcher = "3. Stunea al monstre durant 2 torns";
         public const string HabilityKnight = "3. El cavaller es torna invulnerable al dany durant 3 torns";
         public const string HabilitySorcerer = "3. Lança una bola de foc al monstre que fa el triple de dany que l'atac normal de la maga";
