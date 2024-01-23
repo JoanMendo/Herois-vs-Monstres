@@ -17,8 +17,12 @@ namespace PR1
             int knightHability = Const.Zero;
             int mageHability = Const.Zero;
             int druidHability = Const.Zero;
-            bool monsterDead = false;
             int [] HabilityCoolDowns = {archerHability, knightHability, mageHability, druidHability};
+            bool damageReducedArcher = false;
+            bool damageReducedKnight = false;
+            bool damageReducedMage = false;
+            bool damageReducedDruid = false;
+            bool[] DamagedReducedActive = { damageReducedArcher, damageReducedKnight, damageReducedMage, damageReducedDruid };
             double[,] stats = new double[3, 5];
             string names;
             int action = Const.Zero;
@@ -27,6 +31,7 @@ namespace PR1
             Random random = new Random();
             int[] randomTurns = {0,1,2,3};
             bool characterAlive = true;
+            bool monsterDead = false;
 
 
 
@@ -163,6 +168,7 @@ namespace PR1
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(Const.BattleStart);
                     do
                     {
                         errors = 0;
@@ -191,20 +197,36 @@ namespace PR1
                                             stats[0, 4] = stats[0, 4] - (stats[1,i] * (stats[2,4] / 100));
                                             if (stats[0, 4] <= 0)
                                             {
-                                                Console.WriteLine($"{names[i]} ha atacat al monstre {names[4]} i l'ha matat.");
+                                                Console.WriteLine($"{names[randomTurns[i]]} ha atacat al monstre {names[4]} i l'ha matat.");
                                                 monsterDead = true;
                                             }
                                             else
                                             {
-                                                Console.WriteLine($"{names[i]} ha atacat al monstre {names[4]} i l'ha deixat a stats[0, 4] de vida.");
+                                                Console.WriteLine($"{names[randomTurns[i]]} ha atacat al monstre {names[4]} i l'ha deixat a {stats[0, 4]} de vida.");
                                             }
                                             
                                             break;
 
                                         case 2:
+                                            DamagedReducedActive[randomTurns[i]] = true;
+                                            Console.WriteLine($"{names[randomTurns[i]]} s'ha defensat i reduirà el dany rebut a la meitat en el següent atac.");
                                             break;
 
                                         case 3:
+                                            if (HabilityCoolDowns[i] == 0)
+                                            {
+
+                                            }
+                                            else
+                                            {
+                                                if (randomTurns[i] == 1)
+                                                {
+                                                    knightInvincible = 3;
+                                                    Console.WriteLine(Const.KnightHability);
+                                                }
+                                                Console.WriteLine(Const.HabilityOnCooldown);
+                                                errors++;
+                                            }
                                             break;
                                     }
                                 }

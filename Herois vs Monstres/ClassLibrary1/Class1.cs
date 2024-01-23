@@ -28,17 +28,9 @@
         public const string RandomValueInsertion = "Veig que et costa, passem al següent atribut";
 
 
-        public const string BattleStart = "Comença la batalla conta el monstre. Recorda que les habilitats dels personatges tenen un cooldown de 5 torns, i que fer 3 errors al seleccionar l'ació d'un personatge et retornarà al menú. ";
-        public const string ArcherTurn = "És el torn de l'arquera";
-        public const string KnightTurn = "És el torn del cavaller";
-        public const string SorcererTurn = "És el torn de la maga";
-        public const string DruidTurn = "És el torn del druida";
+        public const string BattleStart = "Comença la batalla conta el monstre. Recorda que les habilitats dels personatges tenen un cooldown de 5 torns, i que fer 3 errors al seleccionar l'acció d'un personatge saltarà el seu torn. ";
         public const string Attack = "1. Atacar al monstre";
         public const string Defense = "2. Defensarse (Duplica la reducció de dany aquest torn)";
-        public const string HabilityArcher = "3. Stunea al monstre durant 2 torns";
-        public const string HabilityKnight = "3. El cavaller es torna invulnerable al dany durant 3 torns";
-        public const string HabilitySorcerer = "3. Lança una bola de foc al monstre que fa el triple de dany que l'atac normal de la maga";
-        public const string HabilityDruid = "3. Retorna 500 de vida als teus aliats. No pot sobrepasar la seva vida màxima";
         public const string CombatError = "1 per atacar, 2 per defensar-se, 3 per l'abilitat, no és tan difícil.";
         public const string MonsterDefeated = "Felicitats, has acabat amb el monstre";
         public const string ArcherDead = "La arquera s'acaba de morir";

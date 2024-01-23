@@ -99,7 +99,7 @@ namespace Metodos
                     }
                     else
                     {
-                        Console.WriteLine($"{namesArray[i]} està mort i no pot fer res.");
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
                         return false;
                     }
 
@@ -117,7 +117,7 @@ namespace Metodos
                     }
                     else
                     {
-                        Console.WriteLine($"{namesArray[i]} està mort i no pot fer res.");
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
                         return false;
                     }
 
@@ -135,7 +135,7 @@ namespace Metodos
                     }
                     else
                     {
-                        Console.WriteLine($"{namesArray[i]} està mort i no pot fer res.");
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
                         return false;
                     }
             
@@ -154,7 +154,7 @@ namespace Metodos
                     }
                     else
                     {
-                        Console.WriteLine($"{namesArray[i]} està mort i no pot fer res.");
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
                         return false;
                     }
                 default: return false;
