@@ -161,9 +161,44 @@ namespace Metodos
             }
             
         }
-        public static void CombatSelection() 
+        public static double[,] DruidHealing(double[,] stats, string [] names)
         {
-
+            for (int i = 0; i < stats.GetLength(0)-1; i++)
+            {
+                if (stats[0,i] > 0)
+                {
+                    if (stats[0, i] + Const.FiveHundred > Const.EasyStats[0,i])
+                    {
+                        Console.WriteLine($"S'ha curat a {names[i]} fins la vida màxima");
+                        stats[0, i] = Const.EasyStats[0,i];
+                    }
+                    else
+                    {
+                        Console.WriteLine($"S'ha curat a {names[i]} 500 de vida");
+                        stats[0, i] += Const.FiveHundred;
+                    }
+                }
+            }
+            return stats;
+        }
+        public static double[] BubbleSortHP(double[] hp)
+        {
+            double temp;
+            for (int i = 0; i < hp.Length; i++)
+            {
+                for (int j = 0; j < hp.Length - 1; j++)
+                {
+                    if (hp[j] < hp[j + 1])
+                    {
+                        temp = hp[j + 1];
+                        hp[j + 1] = hp[j];
+                        hp[j] = temp;
+                    }
+                }
+            }
+            return hp;
         }
     }
+
+   
 }

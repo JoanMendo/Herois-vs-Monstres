@@ -56,7 +56,7 @@ namespace TestProject1
         [TestMethod]
         public void TestNamesErrorTester1()
         {
-            string[] names = {};
+            string[] names = { };
 
             // Act
             int result = Class2.ErrorTester(names);
@@ -68,7 +68,7 @@ namespace TestProject1
         [TestMethod]
         public void TestNamesErrorTester2()
         {
-            string[] names = {"a","afeasfesa","affafef","fwreerrwqe"};
+            string[] names = { "a", "afeasfesa", "affafef", "fwreerrwqe" };
 
             // Act
             int result = Class2.ErrorTester(names);
@@ -92,7 +92,7 @@ namespace TestProject1
         [TestMethod]
         public void TestNamesErrorTester4()
         {
-            string[] names = {"afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf", "f8wfj98wf" };
+            string[] names = { "afeasfesa", "affafef", "fwreerrwqe", "awdafefeaf", "f8wfj98wf" };
 
             // Act
             int result = Class2.ErrorTester(names);
@@ -105,7 +105,7 @@ namespace TestProject1
         public void TestStatErrorTester1()
         {
             int i = 0, j = 0;
-            double[,] doubles = new double[3,5];
+            double[,] doubles = new double[3, 5];
             doubles[i, j] = 1500;
 
             // Act
@@ -157,7 +157,58 @@ namespace TestProject1
             Assert.AreEqual(true, result);
         }
 
+        [TestMethod]
+        public void TestActionErrorTester1()
+        {
+            int i = 0;
+
+            // Act
+            bool result = Class2.ErrorTester(i);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void TestActionErrorTester2()
+        {
+            int i = 1;
 
 
+            // Act
+            bool result = Class2.ErrorTester(i);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void TestActionErrorTester3()
+        {
+            int i = 4;
+
+
+            // Act
+            bool result = Class2.ErrorTester(i);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void TestActionErrorTester4()
+        {
+            int i = 3;
+
+
+            // Act
+            bool result = Class2.ErrorTester(i);
+
+            // Assert
+            Assert.AreEqual(true, result);
+
+
+
+        }
     }
 }

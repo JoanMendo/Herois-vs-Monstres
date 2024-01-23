@@ -13,6 +13,7 @@
         public const string StartError = "Tens que escriure 0 per sortir del programa, o 1 per jugar, no és tan dificil.";
         public const string MenuErrorLeave = "Bueno, si no etc capaç ni de començar a jugar, no continuis.";
         public const string LeaveConfirmed = "Bueno, donç moltes gràcies per apofitar d'aquesta manera les hores que he invertit creant això. Que tinguis un mal dia.";
+        public const string MenuReturn = "Tornem al menú principal";
 
         public static readonly string[] DificultyMessages = { Dificulty, Easy, Medium, Hard, Custom };
         public const string Dificulty = "Selecciona la dificultat del joc";
@@ -33,17 +34,12 @@
         public const string Defense = "2. Defensarse (Duplica la reducció de dany aquest torn)";
         public const string CombatError = "1 per atacar, 2 per defensar-se, 3 per l'abilitat, no és tan difícil.";
         public const string MonsterDefeated = "Felicitats, has acabat amb el monstre";
-        public const string ArcherDead = "La arquera s'acaba de morir";
-        public const string KnightDead = "El cavaller s'acaba de morir";
-        public const string SorcererDead = "La maga s'acaba de morir";
-        public const string DruidDead = "El druida s'acaba de morir";
+        public const string HeroesDefeated = "Tots els teus herois han mort, ets dolentisim";
         public const string ArcherStun = "L'arquera a stunejat al monstre durant 2 turns";
         public const string HabilityOnCooldown = "Aquesta habilitat està en cooldown";
         public const string MonsterStuned = "El monstre està stunejat i no atacarà aquest torn";
-        public const string KnightHability = "El cavaller  es protegeix, i serà invulnerabble al dany durant tres torns";
-        public const string KnightHabilityActive = "El monstre ataca al cavaller, pero al cavaller se la pela tot";
-        public const string KnightDefendWhileabilityActive = "Això no ha servit de res perquè igualment no habria rebut dany, però no et desanimis campió";
-
+        public const string KnightHability = "El cavaller es protegeix, i serà invulnerable al dany durant tres torns";
+        public const string KnightInvulnerable = "El cavaller no ha patit ningun mal aquest torn";
         public const string BlankLine = " ";
 
         public const int Zero = 0;
