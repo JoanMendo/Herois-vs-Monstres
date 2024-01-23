@@ -257,7 +257,7 @@ namespace TestProject1
 
             double[,] result = Class2.DruidHealing(stats, names);
 
-            Assert.AreEqual(Const.EasyStats, result);
+            Array.Equals(Const.EasyStats, result);
         }
 
         [TestMethod]
@@ -269,7 +269,7 @@ namespace TestProject1
 
             double[,] result = Class2.DruidHealing(stats, names);
 
-            Assert.AreEqual(Const.EasyStats, result);
+            Array.Equals(Const.EasyStats, result);
         }
         [TestMethod]
         public void TestDruidHealing3()

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj": {}
+    "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj": {}
   },
   "projects": {
-    "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj",
-        "packagesPath": "C:\\Users\\argo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\obj\\",
+        "projectPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj",
+        "packagesPath": "C:\\Users\\joanm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\argo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joanm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,21 +55,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj": {
+    "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj",
+        "projectUniqueName": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj",
         "projectName": "ClassLibrary2",
-        "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj",
-        "packagesPath": "C:\\Users\\argo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\obj\\",
+        "projectPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj",
+        "packagesPath": "C:\\Users\\joanm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\argo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joanm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +83,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj"
+              "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj"
               }
             }
           }
@@ -114,21 +114,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj": {
+    "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj",
+        "projectUniqueName": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj",
         "projectName": "Herois vs Monstres",
-        "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj",
-        "packagesPath": "C:\\Users\\argo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\obj\\",
+        "projectPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\Herois vs Monstres.csproj",
+        "packagesPath": "C:\\Users\\joanm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\Herois vs Monstres\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\argo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joanm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -142,11 +142,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj"
+              "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary1\\ClassLibrary1.csproj"
               },
-              "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj": {
-                "projectPath": "C:\\Users\\argo\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj"
+              "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj": {
+                "projectPath": "C:\\Users\\joanm\\Source\\Repos\\JoanMendo\\Herois-vs-Monstres\\Herois vs Monstres\\ClassLibrary2\\ClassLibrary2.csproj"
               }
             }
           }
@@ -176,7 +176,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
