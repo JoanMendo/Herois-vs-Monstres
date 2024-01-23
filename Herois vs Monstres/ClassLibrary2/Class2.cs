@@ -1,5 +1,6 @@
 ﻿using Constants;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Metodos
@@ -47,15 +48,7 @@ namespace Metodos
             }
             return Const.Zero;
         }
-        public static void ErrorTester(int errors)
-        {
-            if (errors == Const.Three)
-            {
-                Console.WriteLine(Const.MenuErrorLeave);
-
-            }
-
-        }
+       
         public static bool ErrorTester(double[,] stats ,int i, int j)
         {
             if (Const.EasyStats[i, j] > Const.HardStats[i, j])
@@ -64,7 +57,7 @@ namespace Metodos
                 {
                     return false;
                 }
-                
+
                 return true;
             }
            else
@@ -77,6 +70,135 @@ namespace Metodos
             }
             
         }
-        
+
+        public static bool ErrorTester(int action)
+        {
+            if (action < 1 || action > 3)
+            {
+                Console.WriteLine(Const.ActionError);
+                return false;
+            }
+            return true;
+        }
+        public static bool CharactersAliveTester(int i, string[] namesArray, double[,] stats)
+        {
+            switch (i)
+            {
+                case 0:
+                    if (stats[0,i] > 0)
+                    {
+                        Console.WriteLine($"Es el torn de {namesArray[i]}.");
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Attack);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Defense);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine($"3. {namesArray[i]} stunea al monstre durant 2 torns ");
+
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
+                        return false;
+                    }
+
+                case 1:
+                    if (stats[0, i] > 0)
+                    {
+                        Console.WriteLine($"Es el torn de {namesArray[i]}.");
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Attack);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Defense);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine($"3. {namesArray[i]} es torna invulnerable al dany durant 3 torns ");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
+                        return false;
+                    }
+
+                case 2:
+                    if (stats[0, i] > 0)
+                    {
+                        Console.WriteLine($"Es el torn de {namesArray[i]}.");
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Attack);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Defense);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine($"3. {namesArray[i]} llança una bola de foc al monstre que fa el triple de dany que el seu atac normal ({stats[1,3]}).");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
+                        return false;
+                    }
+            
+
+                case 3:
+                    if (stats[0, i] > 0)
+                    {
+                        Console.WriteLine($"Es el torn de {namesArray[i]}.");
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Attack);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine(Const.Defense);
+                        Console.WriteLine(Const.BlankLine);
+                        Console.WriteLine($"3. {namesArray[i]} retorna 500 de vida als teus aliats. No pot sobrepasar la seva vida màxima ");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{namesArray[i]} està mort i no pot fer res.\n");
+                        return false;
+                    }
+                default: return false;
+            }
+            
+        }
+        public static double[,] DruidHealing(double[,] stats, string [] names)
+        {
+            for (int i = 0; i < Const.Four; i++)
+            {
+                if (stats[0,i] > 0)
+                {
+                    if (stats[0, i] + Const.FiveHundred > Const.EasyStats[0,i])
+                    {
+                        Console.WriteLine($"S'ha curat a {names[i]} fins la vida màxima");
+                        stats[0, i] = Const.EasyStats[0,i];
+                    }
+                    else
+                    {
+                        Console.WriteLine($"S'ha curat a {names[i]} 500 de vida");
+                        stats[0, i] += Const.FiveHundred;
+                    }
+                }
+            }
+            return stats;
+        }
+        public static double[] BubbleSortHP(double[] hp)
+        {
+            double temp;
+            for (int i = 0; i < hp.Length; i++)
+            {
+                for (int j = 0; j < hp.Length - 1; j++)
+                {
+                    if (hp[j] < hp[j + 1])
+                    {
+                        temp = hp[j + 1];
+                        hp[j + 1] = hp[j];
+                        hp[j] = temp;
+                    }
+                }
+            }
+            return hp;
+        }
     }
+
+   
 }
